@@ -5,3 +5,6 @@
 *.log
 *.gz
 *.toc
+main.lof
+main.lox
+main.tdo

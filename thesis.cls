@@ -1,8 +1,12 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{Thesis}[2014/03/25 v2.0 Dissertate Class]
+\ProvidesClass{Thesis}[2016/03/02 v1.0 Thesis Class]
 \LoadClass[11pt, twoside, a4paper]{report}
 
 %text layout
+%\RequirePackage[l2tabu, orthodox]{nag} %%%uncomment to see what you've been doing wrong
+\RequirePackage{hyperref}
+\RequirePackage{color}
+\RequirePackage[colorinlistoftodos]{todonotes}
 \RequirePackage{graphicx}
 \RequirePackage{fixltx2e}
 \RequirePackage{setspace}
@@ -11,6 +15,7 @@
 \RequirePackage{fancyvrb}
 \RequirePackage{microtype}
 \RequirePackage{listings}
+\RequirePackage[xindy]{glossaries}
 \RequirePackage{blindtext}
 \usepackage[square,sort,comma,numbers]{natbib}
 \setlength{\bibsep}{5pt plus 2ex minus 2ex} %lines between references
@@ -32,6 +37,7 @@
 \usepackage[titles]{tocloft} %not sure
 \usepackage[titletoc]{appendix}
 %dunno but maybe useful?
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 %\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\cftchapfont}{\normalsize \scshape}%%%%%%%%%%%%%%%%%%
 %change name of list of figures and list of tables
@@ -87,9 +93,10 @@
 	\copyrightpage
 	\abstractpage
 	\tableofcontents
-	% \listoffigures % optional
+	\listoffigures % optional
 	\dedicationpage
 	\acknowledgments
+	%\makeglossary
 }
 
 %has to be redone
@@ -167,3 +174,12 @@
 	\setcounter{page}{1}
 	\pagenumbering{arabic}
 }
+
+%todolist redefined commands
+\newcommand{\todominor}[2][]
+{\todo[color=green, #1]{#2}}
+\newcommand{\todowarning}[2][]
+{\todo[color=orange, #1]{#2}}
+\newcommand{\todocritical}[2][]
+{\todo[color=red, #1]{#2}}
+
