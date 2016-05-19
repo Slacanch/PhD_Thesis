@@ -8,3 +8,8 @@
 main.lof
 main.lox
 main.tdo
+main.dvi
+main.glo
+*.lot
+*.bak
+*.xdy

@@ -8,14 +8,14 @@
 \RequirePackage{color}
 \RequirePackage[colorinlistoftodos]{todonotes}
 \RequirePackage{graphicx}
-\RequirePackage{fixltx2e}
+%\RequirePackage{fixltx2e} %not required anymore
 \RequirePackage{setspace}
 \doublespacing
 \RequirePackage{parskip}
 \RequirePackage{fancyvrb}
 \RequirePackage{microtype}
 \RequirePackage{listings}
-\RequirePackage[xindy]{glossaries}
+
 \RequirePackage{blindtext}
 \usepackage[square,sort,comma,numbers]{natbib}
 \setlength{\bibsep}{5pt plus 2ex minus 2ex} %lines between references
@@ -23,6 +23,16 @@
 %avoid lone lines at the beginnig or bottom of page, increase if necessary
 \widowpenalty=300
 \clubpenalty=300
+
+%quality of life commands
+\newcommand{\cer}{\emph{S.cerevisiae }}
+
+
+%glossaries
+\RequirePackage[xindy]{glossaries}
+\loadglsentries{acronym_definition}
+\setacronymstyle{long-short}  
+\makeglossary
 
 %headers
 \RequirePackage{fancyhdr}
@@ -92,12 +102,28 @@
 	\maketitle
 	\copyrightpage
 	\abstractpage
+	\addcontentsline{toc}{chapter}{Table of Contents}
 	\tableofcontents
-	\listoffigures % optional
+	\clearpage
+	\addcontentsline{toc}{chapter}{List of Figures}
+	\listoffigures 
+	\clearpage
+	\addcontentsline{toc}{chapter}{List of Tables}
+	\listoftables
+	\clearpage
 	\dedicationpage
+	\addcontentsline{toc}{chapter}{Acknowledgments}
 	\acknowledgments
-	%\makeglossary
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+	\printglossaries
+
+	
 }
+
+
+
+
 
 %has to be redone
 \renewcommand{\maketitle}{
@@ -164,15 +190,15 @@
 	\newpage \thispagestyle{fancy} \vspace*{\fill}
 	\scshape \noindent \input{frontmatter/dedication}
 	\vspace*{\fill} \newpage \rm
+	\clearpage
 }
 
 \newcommand{\acknowledgments}{
 	\chapter*{Acknowledgments}
 	\noindent
 	\input{frontmatter/thanks}
-	\vspace*{\fill} \newpage
-	\setcounter{page}{1}
-	\pagenumbering{arabic}
+	\vspace*{\fill} %\newpage
+	\clearpage
 }
 
 %todolist redefined commands

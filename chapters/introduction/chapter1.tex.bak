@@ -1,0 +1,49 @@
+\chapter{Transcription}
+%general intro on transcription
+
+Transcription of DNA into RNA intermediates constitutes the first step in gene expression.
+The quantity and quality of transcripts produced can have significant repercussions on every known biological process.
+Even minute changes in transcription patterns can upset the balance of proteins, ribozymes, tRNAs and functional non-coding RNAs, generating a cascade of cellular responses . 
+Because of this massive potential, transcription is a complex and finely regulated process: according to \gls{sgd} annotation 1231 out of 6691 genes in \cer (18\%) are described as regulating or taking part in the transcriptional process.
+
+Transcription is divided into three fundamental stages: initiation involves the assembly of an RNA polymerase on a promoter sequence and its interaction with general transcription factors; elongation happens after the polymerase escapes the promoter and is actively transcribing the DNA template; and termination results in the disassembly of the elongation complex and the release of the transcript into the nucleus. 
+
+
+%transcription is an important process
+ %affects the state of the cell
+ %even though layers exsist, they act on the basal levels set by transcription
+%transcription is finely regulated
+%a number of factors contribute to the regulation
+%transcription is divided into three foundamental stages
+%summarize the stages
+%understanding of these three stages is fundamental (?)
+%strong conclusion? 
+
+\section{Initiation}
+\blindtext
+\blindtext
+\blindtext
+\subsection{General transcription factors}
+\subsection{Gene specific transcription factors}
+\subsection{chromatin states}
+\subsection{promoter clearance}
+
+\section{Elongation}
+\subsection{the elongation complex?}
+\subsection{CTD phosphorilation}
+\subsection{TFIIS and backtracking}
+\subsection{chromatin states}
+
+\section{Termination}
+\subsection{CPF}
+\subsubsection{torpedo model}
+\subsubsection{allosteric model}
+\subsubsection{combined model?}
+\subsubsection{fate of the transcripts}
+\subsection{NNS}
+\subsubsection{mechanistic models}
+\subsubsection{DNA elements}
+\subsubsection{fate of the transcripts}
+\subsection{non-canonical termination}
+\subsubsection{spt whatever, look it up on the review}
+\subsubsection{Roadblock termination}
