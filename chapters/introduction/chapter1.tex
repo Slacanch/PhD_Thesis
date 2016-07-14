@@ -37,43 +37,48 @@ Transcription initiation fundamentally relies on the assembly of the \gls{pic} (
 The assembly of such complex is spatially defined by two elements: chromatin structure and core promoter elements.
 Both contribute to limit the amount of spurious transcription by ensuring robust assembly of the \gls{pic} only in promoter regions.
 
-\subsection{Chromatin structure}
+In addition to spatial regulation, timing and intensity of transcription initiation must also be controlled.
+Any specific promoter can be finely tuned by the binding of gene-specific transcription factors, that can act as either enhancers or repressors; modulating initiation efficiency either constitutively or in response to environmental effects. 
+
+Finally, when the \gls{pic} is fully assembled, it will start several rounds of abortive initiation, eventually escaping the promoter and entering productive elongation.
+
+\subsection{Spatial regulation: Chromatin structure and core promoter elements}
 
 Chromatin is a higher order structure that forms when DNA wraps around histones, proteins that can efficiently arrange loose DNA into compact structures.
 The simplest unit of chromatin consists of ~140 nucleotides of DNA tightly wrapped around a histone, forming a nucleosome.
 The organization of the genome around units of nucleosomes has a moltitude of consequences, not least of which is to sterically prevent DNA binding proteins from accessing DNA. 
-As transcription relies on assembly of \gls{pol2} and the \gls{pic} on DNA to complete its initial phase, nucleosomes pose a considerable barrier to efficient initiation.
+As transcription relies on assembly of \gls{pol2} and the \gls{pic} on DNA to complete its initial phase, nucleosomes pose a considerable barrier to efficient initiation \cite{field:2008:distinct} \cite{jiang:2009:compiled}.
 The insulation of DNA by nucleosomes has been harnessed by the cell and made into a regulatory mechanism that can spatially regulate where transcription initiates. 
 To allow transcription factors to associate with DNA in promoter regions, these are always associated with an \gls{nfr}, an area of the genome where nucleosomes are depleted, leaving naked DNA available for binding.
+Several complexes can mediate depletion of nucleosomes from promoter regions, such as SWI1/SNF and the closely related RSC complex.
+These complexes can be recruited in two ways: through sequence specificity or through interaction with gene-specific transcription factors such as Reb1p, Abf1p and Rap1p.
 
-%rewrite from here
-%These sequence elements contain binding sites for several transcription factors that will eventually assemble into the \gls{pic}, 
-%Another spatial constraint on the location of transcription initiation is chromatin. 
-%Nucleosomes can occlude core promoter sequences and prevent assembly of the \gls{pic}.
-%Several mechanisms are employed by the cell to generate \gls{nfr} at promoter regions and therefore ensure that \gls{pic} assembly can proceed unimpeded \cite{field:2008:distinct; jiang:2009:compiled}.
-
-Temporally, the amount and timing of initiation at any specific promoter can be finely tuned by the binding of gene-specific transcription factors, that can act as either enhancers or repressors; modulating initiation efficiency either constitutively or in response to environmental effects. 
-
-After assembly of the \gls{pic}, the complex melts the promoter DNA and performs several rounds of abortive transcription, eventually escaping the promoter and entering the elongation phase.
-All these regulatory mechanisms ensure that initiation remains confined to promoter regions, preventing transcription from interfering with other DNA-based biological processes.
+While chromatin is the main spatial regulator of transcription initiation, core promoter elements provide specificity for many early-acting general transcription factors. 
+Despite there being core promoter elements in virtually every promoter, there is no universally required sequence for transcription initiation \cite{butler:2002:RNA}.
+The major sequence element known to bring about the assembly of the \gls{pic} in \cer is the TATA box.
+\todominor{find percentage and put tbp acronym}
+This very short consensus sequence TATAAA is present in about XX\% of yeast genes and is recognized by TBP
 
 
-The core promoter region can stretch for up to 200 \gls{bp} upstream of the transcription start site. 
-It contains numerous sequence elements that are known to interact with general transcription factors and promote \gls{pic} assembly. 
+This improved specificity results in both better  accuracy of pic assembly and increased transcription rates.
+
+
+
+
 In contrast to metazoans, \cer 
 
-There appear to be no universal core promoter elements that are absolutely required for proper gene expression \cite{butler:2002:RNA}.
+There appear to be no universal core promoter elements that are absolutely required for proper gene expression .
 On the contrary, each sequence element is present in some, but not all promoters; contributing to combinatorial gene regulation \cite{smale:2001:core}.
 
-\todowarning{figure \ref{coreprom} is wrong, DPE is only found in drosophila+ organisms}
+%\todowarning{figure \ref{coreprom} is wrong, DPE is only found in drosophila+ organisms}
 
-\begin{figure}[!ht]
+%\begin{figure}[!ht]
   
   %\centering
-    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figures/introduction/core_promoter}
-    \label{coreprom}
-    \caption{The diagram represents some of the sequence elements important for the recruitment of basal transcriptional machinery at promoter regions. TATA box is present at highly regulated genes and can function independently of the other motifs. BRE is usually located upstream of the TATA box motif and acts as platform for the recruitment of TFIIB, one of the general transcription factors. Inr  }
-\end{figure}
+%    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]%{figures/introduction/core_promoter}
+%    \label{coreprom}
+%    \caption{The diagram represents some of the sequence elements important for the recruitment of basal %transcriptional machinery at promoter regions. TATA box is present at highly regulated genes and can %function independently of the other motifs. BRE is usually located upstream of the TATA box motif and %acts as platform for the recruitment of TFIIB, one of the general transcription factors. Inr  }
+%\end{figure}
 
 A representation of the most important core promoter elements is depicted in figure \ref{coreprom}. 
 %\subsection{Gene specific transcription factors}
