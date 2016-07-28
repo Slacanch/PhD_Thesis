@@ -13,3 +13,6 @@ main.glo
 *.lot
 *.bak
 *.xdy
+*.out
+*.glg
+*.gls

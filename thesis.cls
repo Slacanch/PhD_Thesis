@@ -4,7 +4,7 @@
 
 %text layout
 %\RequirePackage[l2tabu, orthodox]{nag} %%%uncomment to see what you've been doing wrong
-\RequirePackage{hyperref}
+%\RequirePackage{hyperref}
 \RequirePackage{color}
 \RequirePackage[colorinlistoftodos]{todonotes}
 \RequirePackage{graphicx}
@@ -29,10 +29,11 @@
 
 
 %glossaries
-\RequirePackage[xindy]{glossaries}
+\RequirePackage[xindy,toc]{glossaries}
 \loadglsentries{acronym_definition}
 \setacronymstyle{long-short}  
 \makeglossary
+
 
 %headers
 \RequirePackage{fancyhdr}
@@ -43,7 +44,7 @@
 
 %forntmatter
 \RequirePackage{titling}
-%\setcounter{tocdepth}{1} %set level of stuff displayed in table of contents
+\setcounter{tocdepth}{3} %default is 2, using 3 shows unnumbered subsubsections
 \usepackage[titles]{tocloft} %not sure
 \usepackage[titletoc]{appendix}
 %dunno but maybe useful?
@@ -53,6 +54,7 @@
 %change name of list of figures and list of tables
 \renewcommand\listfigurename{Listing of figures}
 \renewcommand\listtablename{Listing of tables}
+
 
 %quotchap
 \RequirePackage[palatino]{quotchap}
@@ -111,12 +113,16 @@
 	\addcontentsline{toc}{chapter}{List of Tables}
 	\listoftables
 	\clearpage
-	\dedicationpage
+	\printglossaries
+	\clearpage
 	\addcontentsline{toc}{chapter}{Acknowledgments}
 	\acknowledgments
+	\clearpage
+	\dedicationpage
+
 	\setcounter{page}{1}
 	\pagenumbering{arabic}
-	\printglossaries
+	
 
 	
 }
