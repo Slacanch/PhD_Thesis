@@ -4,7 +4,7 @@
 
 %text layout
 %\RequirePackage[l2tabu, orthodox]{nag} %%%uncomment to see what you've been doing wrong
-%\RequirePackage{hyperref}
+\RequirePackage{hyperref}
 \RequirePackage{color}
 \RequirePackage[colorinlistoftodos]{todonotes}
 \RequirePackage{graphicx}
@@ -15,7 +15,6 @@
 \RequirePackage{fancyvrb}
 \RequirePackage{microtype}
 \RequirePackage{listings}
-
 \RequirePackage{blindtext}
 \usepackage[square,sort,comma,numbers]{natbib}
 \setlength{\bibsep}{5pt plus 2ex minus 2ex} %lines between references
@@ -27,6 +26,13 @@
 %quality of life commands
 \newcommand{\cer}{\emph{S.cerevisiae }}
 
+%hyperref options
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = black, %Colour for external hyperlinks
+  linkcolor    = black, %Colour of internal links
+  citecolor   = SchoolColor %Colour of citations
+}
 
 %glossaries
 \RequirePackage[xindy,toc]{glossaries}
