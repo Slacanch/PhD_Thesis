@@ -25,6 +25,11 @@
 
 %quality of life commands
 \newcommand{\cer}{\emph{S.cerevisiae }}
+\newcommand{\coli}{\emph{E.coli }}
+\newcommand{\invivo}{\emph{in vivo }}
+\newcommand{\invitro}{\emph{in vitro }}
+\newcommand{\ctdlong}{\textsc{Tyr\textsubscript{1}-Ser\textsubscript{2}-Pro\textsubscript{3}-Thr\textsubscript{4}-Ser\textsubscript{5}-Pro\textsubscript{6}-Ser\textsubscript{7} }}
+\newcommand{\ctdshort}{YSPTSPS }
 
 %hyperref options
 \hypersetup{
