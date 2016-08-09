@@ -7,7 +7,7 @@ titleWord = ''
 author = ''
 year = ''
 
-#sys.argv.append("readcube_export.bib")
+
 
 #----------------------------------------------------------------------
 def puncSpaceFilter(inString):

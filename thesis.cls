@@ -4,6 +4,7 @@
 
 %text layout
 %\RequirePackage[l2tabu, orthodox]{nag} %%%uncomment to see what you've been doing wrong
+\RequirePackage[utf8]{inputenc}
 \RequirePackage{hyperref}
 \RequirePackage{color}
 \RequirePackage[colorinlistoftodos]{todonotes}
@@ -23,13 +24,32 @@
 \widowpenalty=300
 \clubpenalty=300
 
-%quality of life commands
-\newcommand{\cer}{\emph{S.cerevisiae }}
-\newcommand{\coli}{\emph{E.coli }}
-\newcommand{\invivo}{\emph{in vivo }}
-\newcommand{\invitro}{\emph{in vitro }}
-\newcommand{\ctdlong}{\textsc{Tyr\textsubscript{1}-Ser\textsubscript{2}-Pro\textsubscript{3}-Thr\textsubscript{4}-Ser\textsubscript{5}-Pro\textsubscript{6}-Ser\textsubscript{7} }}
-\newcommand{\ctdshort}{YSPTSPS }
+%%%%%%% QUALITY OF LIFE COMMANDS %%%%%%%%%%
+% ITALICS
+\newcommand{\cer}{\emph{S.cerevisiae}}
+\newcommand{\coli}{\emph{E.coli}} 
+\newcommand{\invivo}{\emph{in vivo}}
+\newcommand{\invitro}{\emph{in vitro}}
+% CTD
+\newcommand{\ctdlong}{\textsc{Tyr\textsubscript{1}-Ser\textsubscript{2}-Pro\textsubscript{3}-Thr\textsubscript{4}-Ser\textsubscript{5}-Pro\textsubscript{6}-Ser\textsubscript{7}}}
+\newcommand{\ctdshort}{YSPTSPS}
+\newcommand{\tyr}{\textsc{Tyr\textsubscript{1}}}
+\newcommand{\sert}{\textsc{Ser\textsubscript{2}}}
+\newcommand{\thr}{\textsc{Thr\textsubscript{4}}}
+\newcommand{\serf}{\textsc{Ser\textsubscript{5}}}
+\newcommand{\sers}{\textsc{Ser\textsubscript{7}}}
+
+%%%%%%% TODOLIST COMMANDS %%%%%%%
+\newcommand{\todominor}[2][]
+{\todo[color=green, #1]{#2}}
+\newcommand{\todomajor}[2][]
+{\todo[color=orange, #1]{#2}}
+\newcommand{\todocritical}[2][]
+{\todo[color=red, #1]{#2}}
+
+
+
+
 
 %hyperref options
 \hypersetup{
@@ -218,11 +238,5 @@
 	\clearpage
 }
 
-%todolist redefined commands
-\newcommand{\todominor}[2][]
-{\todo[color=green, #1]{#2}}
-\newcommand{\todowarning}[2][]
-{\todo[color=orange, #1]{#2}}
-\newcommand{\todocritical}[2][]
-{\todo[color=red, #1]{#2}}
+
 
