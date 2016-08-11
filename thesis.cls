@@ -17,12 +17,14 @@
 \RequirePackage{microtype}
 \RequirePackage{listings}
 \RequirePackage{blindtext}
+\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
 \usepackage[square,sort,comma,numbers]{natbib}
 \setlength{\bibsep}{5pt plus 2ex minus 2ex} %lines between references
 %fonts
 %avoid lone lines at the beginnig or bottom of page, increase if necessary
 \widowpenalty=300
 \clubpenalty=300
+\raggedbottom %this is to avoid random spaces in the middle of the page, might create problems with floats.
 
 %%%%%%% QUALITY OF LIFE COMMANDS %%%%%%%%%%
 % ITALICS
@@ -40,12 +42,8 @@
 \newcommand{\sers}{\textsc{Ser\textsubscript{7}}}
 
 %%%%%%% TODOLIST COMMANDS %%%%%%%
-\newcommand{\todominor}[2][]
-{\todo[color=green, #1]{#2}}
-\newcommand{\todomajor}[2][]
+\newcommand{\TODO}[2][]
 {\todo[color=orange, #1]{#2}}
-\newcommand{\todocritical}[2][]
-{\todo[color=red, #1]{#2}}
 
 
 
@@ -61,6 +59,8 @@
 
 %glossaries
 \RequirePackage[xindy,toc]{glossaries}
+%\RequirePackage{glossary-mcols} this and the following are required to put the glossary in two columns.
+%\setglossarystyle{mcolindex} 
 \loadglsentries{acronym_definition}
 \setacronymstyle{long-short}  
 \makeglossary
@@ -83,8 +83,8 @@
 %\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\cftchapfont}{\normalsize \scshape}%%%%%%%%%%%%%%%%%%
 %change name of list of figures and list of tables
-\renewcommand\listfigurename{Listing of figures}
-\renewcommand\listtablename{Listing of tables}
+\renewcommand\listfigurename{Figures}
+\renewcommand\listtablename{Tables}
 
 
 %quotchap
