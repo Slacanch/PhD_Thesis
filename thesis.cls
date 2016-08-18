@@ -4,7 +4,7 @@
 
 %text layout
 %\RequirePackage[l2tabu, orthodox]{nag} %%%uncomment to see what you've been doing wrong
-\RequirePackage[utf8]{inputenc}
+\RequirePackage[utf8x]{inputenc}
 \RequirePackage{hyperref}
 \RequirePackage{color}
 \RequirePackage[colorinlistoftodos]{todonotes}
@@ -30,6 +30,7 @@
 % ITALICS
 \newcommand{\cer}{\emph{S.cerevisiae}}
 \newcommand{\coli}{\emph{E.coli}} 
+\newcommand{\cele}{\emph{C.elegans}} 
 \newcommand{\invivo}{\emph{in vivo}}
 \newcommand{\invitro}{\emph{in vitro}}
 % CTD
@@ -40,6 +41,8 @@
 \newcommand{\thr}{\textsc{Thr\textsubscript{4}}}
 \newcommand{\serf}{\textsc{Ser\textsubscript{5}}}
 \newcommand{\sers}{\textsc{Ser\textsubscript{7}}}
+\newcommand{\FtoT}{5'$\rightarrow$3'}
+\newcommand{\TtoF}{3'$\rightarrow$5'}
 
 %%%%%%% TODOLIST COMMANDS %%%%%%%
 \newcommand{\TODO}[2][]
