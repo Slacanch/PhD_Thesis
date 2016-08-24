@@ -94,28 +94,60 @@ Despite recent advances and the rise of a unified model for transcription termin
 \subsection{The NNS pathway}
 
 \gls{nns} dependent transcription termination is the second wide-spread termination mechanism in \cer{}.
-The \gls{nns} complex is composed of the two RNA binding proteins Nrd1 and Nab3, plus the RNA-DNA helicase Sen1. 
+It sets itself a part from \gls{cpf} termination in a number of ways.
+First and foremost, it relies on a completely different---and much smaller---set of proteins: the two RNA binding proteins Nrd1 and Nab3, together with the RNA-DNA helicase Sen1.
+Because of the different molecular effectors, the termination mechanism---although still not fully elucidated---is appreciably different.
 
-\gls{nns} termination sets itself a part from \gls{cpf} termination in a number of ways.  
-Unlike \gls{cpf}, It operates mainly on non-coding RNAs and acts in the very early stages of transcription.
-
-
-It does not result in cleavage of the RNA transcript.
-Instead the disassembly of the elongation itself complex mediates the release of the transcript. 
-
-
-
-As is the case with \gls{cpf} termination, these proteins rely on \gls{pol2} \gls{ctd} and on small sequence elements on the nascent RNA as tools to be recruited to sites of termination, where they will eventually act to dismantle the elongation complex.
-\gls{nns} termination d
-
+It does not result in cleavage of the RNA transcript, but instead it is the disassembly of the elongation itself that mediates the release of the transcript. 
 As a consequence, the 3' end of the terminated transcript coincide with the termination site on DNA, making \gls{nns} termination substantially less precise than \gls{cpf}.
+The \gls{nns} complex also recruits a completely different set of 3' end processing and maturation factors called \gls{tramp} (\glsdesc{tramp}), which drives post-transcriptional polyadenylation and leads to trimming or complete degradation of the transcript. 
 
-This termination pathway, despite not being directly involved in the termination of protein-coding genes, can play a role in the regulation of gene expression by acting as an attenuator (i.e. terminating some  transcription events very early in the transcription cycle of a given gene) or otherwise modulating the transcription of nearby non-coding RNAs.
-
-
-
-
+\gls{nns} termination operates mainly on non-coding RNAs and acts in the very early stages of transcription.
+Despite not being directly involved in the termination of protein-coding genes, it can play a role in the regulation of gene expression by acting as an attenuator (i.e. terminating some transcription events very early in the transcription cycle, preventing them from coming to completion.) or otherwise modulating the transcription of nearby non-coding RNAs.
 
 
+\subsubsection{The NNS complex structural overview of the proteins}
+
+The main molecular effectors of the \gls{nns} complex are the three protein Nab3, Nrd1 and Sen1.
+Despite their number, they present a remarkably complex network of interaction between each other, \gls{pol2}, and the nascent transcript.
+
+\paragraph{Nab3}
+
+This factor was originally identified as a polyadenylated RNA binding protein.
+Its structure contains a conserved \gls{rrm} that can contact specific sequence elements on the nascent RNA, a \gls{nim} necessary for the interaction with Nrd1, and two low complexity domains: an essential Glutammine/Proline region at the C-terminus, and a dispensable Aspartic/Glutammic acid region at the N-terminus. 
+
+Biochemical experiments have shown that Nab3 forms a stable heterodimer with Nrd1 through the \gls{nim} and contacts the RNA as such. 
+In addition, the structure of the \gls{rrm} has been solved, revealing the structural basis for the preference of the sequence UCUUG.
+Finally, its Glutammine/Proline region---despite being generally unstructured---can assemble into amyloid structures; a feature that might be important for termination.
+
+
+\paragraph{Nrd1}
+
+Identified as part of the ``nuclear pre-mRNA downregulation" family of proteins, Nrd1 is the most abundant of the three members of the complex.
+Its main features consist of an \gls{rrm} structure that allows it to contact the nascent RNA, a \gls{cid} domain that interacts specifically with the \serf{}-phosphorylated version of the \gls{ctd}, and a Nab3 interaction motif that allows it to form a stable heterodimer.
+
+Nrd1's \gls{rrm} was shown \invivo{} to contact the consensus sequence GTAA/G.
+Recent \invitro{} studies, however, have called this notion into question by showing that several other G-rich and A-rich sequences could be bound equally well.
+This led to the theory that presence of other members of the complex could enhance binding specificity.
+
+In addition to the RNA, Nrd1 can contact \gls{pol2} through its \gls{cid}. 
+The specificity for \serf{}-phosphorylated \gls{ctd} is one of the determinants for the early activity of the \gls{nns} termination pathway. 
+Dispensable for cell viability, the interaction with \gls{pol2} is thought to precede RNA binding and promote termination by increasing the local density of Nrd1-Nab3 heterodimer in the early phases of transcription.
+This mechanism is very similar to that employed by \gls{cpf} through its subunit Pcf11---containing a \gls{cid} with high affinity for \sert{}-P.
+ 
+Curiously, Nrd1 also contains a Glutammine/Proline region at the C-terminus, similarly to Nab3. 
+Deletion of this region shows no growth or termination defects, but is synthetic lethal if combined with other aphenotipic mutations on Nab3 (our unpublished data).
+The functional implications of this genetic interactions are still unknown. 
+
+\paragraph{Sen1}
+
+This extremely large (253kDa) and very low abundance (125 molecules per cell) protein is the only member of the \gls{nns} complex to have enzymatic activity.
+Sen1 was characterized as a helicase of the SFI superfamily and very closely related to Upf1, a member of the \gls{nmd} pathway in the cytoplasm.
+Unlike its close relative, Sen1 posesses a nuclear localization signal and acts in concert with the Nrd1-Nab3 heterodimer in promoting termination of small non-coding transcripts.
+Genome-wide studies,however, have revealed activity at some coding genes, leading to the speculation that Sen1 exerts a regulatory function on these transcripts. \TODO{verify this, ref 54 reines}
+The mechanism of recruitment of Sen1 to the termination site is still not fully clear, but two-hybrid studies have shown that Sen1 can interact with the polymerase itself.
+
+Interestingly, some mutations of the human homolog of Sen1 (Senataxin) cause develpment of neurodegenerative diseases. 
+Introduction of those same mutations in yeast Sen1 lead to termination defects.
 
 \subsection{Non-canonical termination pathways}
