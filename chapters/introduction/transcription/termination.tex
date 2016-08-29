@@ -193,34 +193,79 @@ Together these results support a model where, after attaching itself to the nasc
 \subsubsection{3' end processing}
 
 The process of \gls{nns} termination is strictly connected with 3' end processing mediated by the \gls{tramp} complex and the nuclear exosome.
-\gls{tramp} (acronym for \glsdesc{tramp}) is a nuclear complex composed of the poly(A) polymerase Trf4, the RNA-binding protein Air2 and the helicase Mtr4 \footnote{It should be noted that within \gls{tramp}, Trf4 and Air2 can sometimes be replaced by their paralogues Trf5 and Air1. This alternative version of the complex is sometimes called \gls{tramp}5 (\gls{tramp}4 containing Trf4 and Air2).}.
+\gls{tramp} (for \glsdesc{tramp}) is a nuclear complex composed of the poly(A) polymerase Trf4, the RNA-binding protein Air2 and the helicase Mtr4\footnote{It should be noted that within \gls{tramp}, Trf4 and Air2 can sometimes be replaced by their paralogues Trf5 and Air1. This alternative version of the complex is sometimes called \gls{tramp}5 (\gls{tramp}4 containing Trf4 and Air2).}.
+Trf4 is the core subunit of \gls{tramp}.
+Both Air2 and Mtr4 bind to it independently and it was recently shown that Trf4 can contact Nrd1 through a small motif that mimicks \serf{}-P \gls{ctd} called \gls{nim}, bringing \gls{tramp} to the terminating elongation complex \cite{tudek:2014:molecular}.
 
+Functionally, \gls{tramp} acts as a co-factor to the nuclear exosome.
+This second complex plays a major role in nuclear quality control, degrading aberrant transcripts and trimming functional small non-coding RNAs such as \gls{sns} and \gls{snos}.
+The exosome is composed of six non-catalytic subunits arranged in a ring-like structure together with three cap subunits that are used for RNA binding.
+The catalytic activity of this complex is dependent on Dis3\footnote{Also known as Rrp44}.
+This \TtoF{} exonuclease associates with the ring on the opposite side of the three cap subunits, and degrades RNAs that are threaded through the cap proteins and into the ring \cite{makino:2015:rna}.
+The exosome is present throughout the nucleus and in the cytoplasm.
+The nuclear version, however, can associate with another exonuclease specific of this compartment: Rrp6, whose activity is known to regulate the levels of a huge number of non-coding RNAs.
 
-
-
-Nrd1 physically interacts with these complexes, and is responsible for the coordination between termination and 3' end processing.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+As previously mentioned, Nrd1 physically interacts with \gls{tramp}, and is responsible for the coordination between termination and 3' end processing.
+The current model posits that when the Nrd1/Nab3 heterodimer is engaged with the Nascent RNA, Trf4 (and \gls{tramp}) can interact with Nrd1's \gls{cid}---either binding it directly, or displacing the \gls{ctd} of \gls{pol2} to get to it\cite{tudek:2014:molecular}.
+After transcription termination has occurred, \gls{tramp} is thought to both recruit and stimulate the activity of the nuclear exosome.
+How the exosome is recruited to \gls{tramp}---and therefore the transcript---is still unclear.
+Recent studies have shown that \gls{tramp} is not the only effector of exosome recruitment, but that Nab3 can contact Rrp6 and bring the exosome to the RNA independently of \gls{tramp}.
+\gls{tramp} stimulates the activity of the exosome via the addition of short poly(A) tails that are thought to provide an unstructured platform that can be easily threaded through the non-catalytic subunits of the ring. 
+However, Air2 and Mtr4 are also thought to help deal with RNA secondary structure thanks to their RNA-binding and helicase activities.  
+The exosome is known to act as a quality control step for short non-coding and aberrant transcripts.
+It can, however, also act as in maturation of functional non-coding RNA (\gls{rrna}, \gls{sns}, and \gls{snos}) through trimming of their 3' ends to the appropriate length for the functional activities.
 
 \subsection{Non-canonical termination pathways}
+
+Despite \gls{cpf} and \gls{nns} being reliable mechanisms of transcription termination, presence of readthrough transcription that was not properly terminated is inevitable.
+While constitutive readthrough does not usually constitute a problem in metazoans---where the size of the genome allows polymerases to stray far from the termination site without impinging on other DNA-based biological processes---organisms with very compact genomes, such as \cer{}, have to deal with the possibility of transcriptional interference.
+
+This phenomenon occurs when unterminated polymerases invade areas of the genome when other processes are taking place, disrupting them.
+A simple example of transcriptional interference is represented in figure \ref{trInterference}\TODO{make figure for transcriptional interference}.
+A polymerase fails to be terminated and invades the promoter region of the subsequent gene.
+Because of the very small distance beween the termination site and the \gls{tss} of the following transcription unit, the polymerase is able to disrupt assembly of the \gls{pic}, resulting in severe downregulation of transcription initiation.
+
+In order to protect these sensitive areas of the genome from stray polymerases, the cell has evolved several mechanisms of fail-safe transcription termination.
+These mechanisms are non-canonical, as they usually emerge from already existing systems and are not dedicated solely to termination.
+Nevertheless, several studies show wide-spread impact of these fail-safe termination mechanisms in preserving proper gene expression.
+
+\subsubsection{Rnt1-dependent termination}
+
+The yeast RnaseIII homologue Rnt1 is an enzyme that binds and specifically cleaves double-stranded RNA stem-loops. 
+This activity serves as the first step in \gls{pol1} transcription termination.
+Additionally, after cleavage has occurred, unprotected 3' and 5' extremities can be attacked by exonucleases, leading to maturation of the transcript.
+
+In the case of \gls{pol2} termination, Rnt1 is thought to act downstream of a subset of genes.
+In case of \gls{cpf} failure in termination, transcription of an appropriate sequence element would create the right substrate for Rnt1.
+After the attacking and cleaving the stem-loop, the torpedo model of \gls{cpf} termination is thought to take over.
+Rat1 would attack the newly formed 5' end and lead to termination through the mechanisms discussed in previous sections.
+Although a similar termination mechanism was described in plants---where the protein Dcl4 is able to provide back-up termination at the FCA locus, know to possess a weak polyadenylation site---most mechanistic details regarding this termination mechanism remain unclear.
+
+\subsubsection{Road-block termination}
+  
+Road-block termination represents another instance of non-canonical \gls{pol2} termination.
+While established as a requisite for termination of \gls{pol1}, road-block has only very recently been demonstrated to be an \invivo{} mechanism for \gls{pol2} termination\cite{colin:2014:roadblock}.
+In this study, the authors explored the role of the transcription factor Reb1 in limiting readthrough transcription.
+
+Reb1 is an essential myb-like transcription factor that specifically and tightly binds the core sequence TTACCCG.
+Binding to the sequence is highly specific, and mutation of one of the aforementioned nucleotides leads to almost complete abrogation of the binding.
+Reb1 sites are prevalent in promoter region and presence of this factor is linked to the recruitment of RSC complex\TODO{rsc acronym?}, known to displace nucleosome and generate \gls{nfr} at target promoters.
+
+Reb1 sites were found to be associated with exosome-dependent transcripts whose 3' ends ended very precisely and abruptly 13-17 nucleotides from the Reb1 binding site. 
+In addition, a prominent accumulation of \gls{pol2} was detected in the same region.
+This pool of polymerases was shown to be pausing and a knock-out of TFIIS---preventing the resolution of backtracking (see section \ref{pausing})---resulted in increased \gls{pol2} occupancy in the proximity of reb1 sites.
+\Invitro{} experiments showed that although Reb1 can act as a physical obstacle and cause \gls{pol2} to pause in its vicinity, this is not sufficient for termination and release of the polymerase from the template.
+\Invivo{}, the molecular effector of termination was found to be the Rsp5/Elc1/Cul3 complex of ubiquitin ligases.
+This complex is known for its activity in ubiquitinylating and degrading the larges subunit of \gls{pol2}, Rpb1\footnote{Also know as Rpo21}, when the polymerase is arrested because of DNA damage.
+
+The current model for road-block termination posits that Reb1 prevents unterminated polymerases from invading nearby promoter regions. 
+Reb1 acts as a physical obstacle that the polymerase cannot overcome, therefore, after several rounds of unsuccessful backtracking, the Rsp5/Elc1/Cul3 complex ubiquitinylates Rpb1, resulting in its proteasomal degradation and subsequent disassembly of the elongation complex.
+The disassembly mediates the release of the transcript, which is polyadenylated by Trf4 and subsequently degraded by the exosome, although the mechanisms through which \gls{tramp} and the exosome are recruited is still unclear.
+
+Given the compactness of the genome of \cer{}, the usefulness of this termination mechanism is immediately obvious. 
+Promoters and potentially other sensitive regions of the genome can be protected from invading polymerase that could potentially disrupt other processes.
+It remains unclear whether this mechanism has any counterpart in metazoans, where larger genomes make the problem of readthrough transcription less relevant.
+Recent genome-wide experiments showed that accumulation of paused polymerases at certain transcription factor binding sites does occur in human.
+However, whether this is linked to transcription termination remains to be elucidated\cite{mayer:2015:native}.
+
+\clearpage
