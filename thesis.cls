@@ -28,11 +28,13 @@
 
 %%%%%%% QUALITY OF LIFE COMMANDS %%%%%%%%%%
 % ITALICS
-\newcommand{\cer}{\emph{S.cerevisiae}}
-\newcommand{\coli}{\emph{E.coli}} 
-\newcommand{\cele}{\emph{C.elegans}} 
-\newcommand{\invivo}{\emph{in vivo}}
-\newcommand{\invitro}{\emph{in vitro}}
+\newcommand{\cer}{\textit{S.cerevisiae}}
+\newcommand{\coli}{\textit{E.coli}} 
+\newcommand{\cele}{\textit{C.elegans}} 
+\newcommand{\invivo}{\textit{in vivo}}
+\newcommand{\invitro}{\textit{in vitro}}
+\newcommand{\Invivo}{\textit{In vivo}}
+\newcommand{\Invitro}{\textit{In vitro}}
 % CTD
 \newcommand{\ctdlong}{\textsc{Tyr\textsubscript{1}-Ser\textsubscript{2}-Pro\textsubscript{3}-Thr\textsubscript{4}-Ser\textsubscript{5}-Pro\textsubscript{6}-Ser\textsubscript{7}}}
 \newcommand{\ctdshort}{YSPTSPS}
