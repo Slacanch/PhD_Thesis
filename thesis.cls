@@ -5,9 +5,21 @@
 %text layout
 %\RequirePackage[l2tabu, orthodox]{nag} %%%uncomment to see what you've been doing wrong
 \RequirePackage[utf8x]{inputenc}
-\RequirePackage{hyperref}
+%%%%%disabled for debugging purposes
+%\RequirePackage{hyperref}
+%%hyperref options
+%\hypersetup{
+%  colorlinks   = true, %Colours links instead of ugly boxes
+%  urlcolor     = black, %Colour for external hyperlinks
+%  linkcolor    = black, %Colour of internal links
+%  citecolor   = SchoolColor %Colour of citations
+%}
+%\RequirePackage[colorinlistoftodos]{todonotes}
+\RequirePackage[disable]{todonotes}
+
+%%%%%% /disabled for debugging purposes
 \RequirePackage{color}
-\RequirePackage[colorinlistoftodos]{todonotes}
+
 \RequirePackage{graphicx}
 %\RequirePackage{fixltx2e} %not required anymore
 \RequirePackage{setspace}
@@ -54,13 +66,7 @@
 
 
 
-%hyperref options
-\hypersetup{
-  colorlinks   = true, %Colours links instead of ugly boxes
-  urlcolor     = black, %Colour for external hyperlinks
-  linkcolor    = black, %Colour of internal links
-  citecolor   = SchoolColor %Colour of citations
-}
+
 
 %glossaries
 \RequirePackage[xindy,toc]{glossaries}

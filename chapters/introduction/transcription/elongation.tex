@@ -32,13 +32,12 @@ The \gls{tec} can overcome this problem by enlisting the help of several histone
 The current model for transcription through nucleosomes posits that, depending on the intensity of transcription, histones can either be completely removed from DNA, or be partially destabilized as to allow \gls{pol2} to more easily transcribe through them \citep{kulaeva:2013:mechanism}.
 The most notable actors in this phase are \gls{hats} such as Gcn5 and the \gls{fact} (\glsdesc{fact}) complex \citep[for review see:][]{reinberg:2006:de}. 
 \gls{hats} are posited to travel with the polymerase, depositing an acetyl group on histone tails.
-This has the consequence of destabilizing inter-nucleosome interactions as well as lowering the affinity for DNA by increasing the negative charge, resulting in a more relaxed chromatin structure and more unstable nucleosomes.
-Once histones are acetylated, \gls{fact}---also travelling with the polymerase---destabilizes the H2A-H2B dimer \footnote{
-Two of the four core components of a histone. Histones are composed of two H2A-H2B dimers and one H3-H4 tetramer arranged in a symmetrical structure. 
+This has the consequence of destabilizing inter-nucleosome interactions as well as lowering the affinity for DNA by increasing negative charges, resulting in a more relaxed chromatin structure and more unstable nucleosomes.
+Once histones are acetylated, \gls{fact}---also travelling with the polymerase---destabilizes the H2A-H2B dimer\footnote{Two of the four core components of a histone. Histones are composed of two H2A-H2B dimers and one H3-H4 tetramer arranged in a symmetrical structure. 
 }, removing it and facilitating transcription through the remaining incomplete nucleosome structure. 
 
 We saw how, in order to efficiently elongate, \gls{pol2} needs to destabilize the chromatin structure.
-However, this destabilization results in a more relaxed structure that can potentially give rise to intragenic transcription initiation.
+However, in the long run, this destabilization can have negative effects, as it results in a more relaxed structure that can potentially give rise to intragenic transcription initiation.
 In order to prevent this phenomenon, the composition, modifications, and overall structure of nucleosomes must be reset after the passage of \gls{pol2}. 
 Specific histone chaperones such as Spt6, together with methil-transferases and \gls{hdacs}, are involved in this process.
 First, Spt6 and other histone chaperones reconstruct a complete histone in the wake of transcribing \gls{pol2}.
@@ -48,19 +47,24 @@ The RPD3 complex has high affinity for H3K36 methilation and is recruited immedi
 
 \subsection{Transcriptional pausing} \label{pausing}
 Nucleosomes do not represent the only obstacle to productive elongation.
-A number of occurrences can prevent \gls{pol2} from elongating forward, such as DNA damage, misincorporation of a nucleotide, or collision with another DNA-bound protein.
-While the cell has evolved complex---and often slow---mechanisms to deal with the more extreme instances \footnote{For example when DNA is damaged,the cell employs ubiquitinylation and degradation of the largest subunit of \gls{pol2} to resolve pausing.}, transcriptional pausing represents the first and common consequence to all the above-cited events. 
-Because reversible pause-inducing events are relatively common during transcription---pausing has been documented in front of every nucleosome \citep{churchman:2011:nascent}---the cell evolved an all-purpose mechanism called backtracking.
-The purpose of backtracking is to quickly resolve pausing before the slower, more complex systems are called into action. 
+A number of events can potentially impair \gls{pol2} from elongating forward, such as DNA damage, misincorporation of a nucleotide, or collision with another DNA-bound protein.
+This causes \gls{pol2} to temporarily stop and often move backwards, a phenomenon known as transcriptional pausing.
+One of the mechanisms used by the polymerase to resolve pausing is called backtracking.
 
-During backtracking---being unable to translocate forward---\gls{pol2} moves backwards, retracing its steps anywhere form 4-5 up to 12-15 nucleotides \citep{cheung:2011:structural}.
+During backtracking, \gls{pol2} moves backwards, retracing its steps.
+how much the polymerase is able to backtrack \invivo{} is a matter of debate, early \invitro{} studies reported up to 100 nucleotides \cite{pausing}, while more recent crystal structures concluded that this figure can range from 4-5 up to 12-15 nucleotides \citep{cheung:2011:structural}.
 This backwards movement causes part of the already synthesized RNA to slide forward into a channel connected to the outside of the complex.
-Presence of RNA into the channel promotes the binding of TFIIS \footnote{Also known as \emph{Dst1}} to the complex \citep{cheung:2011:structural}.
+Presence of RNA into the channel promotes the binding of TFIIS\footnote{Also known as \emph{Dst1}} to the complex \citep{cheung:2011:structural}.
 This stimulates the intrinsic endonucleolytic activity of \gls{pol2}, which results in cleavage of the extruding RNA and realignment of the 3' end of the nascent transcript with the catalytic site of the polymerase.
 At this point, \gls{pol2} has effectively reset its position, having moved back and gotten rid of the extra segment of RNA. 
 It can therefore restart its forward translocation and resume the normal catalytic activity.
 
-While this mechanism is a very effective way of dealing with minor pausing events and nucleotide misincorporations, it is not enough to deal with more stubborn pausing agents.
+In some cases, the backtracking process cannot resolve pausing.
+As transcriptional pausing becomes more prolonged, it progressively evolves towards another state called transcriptional arrest.
+An arrested polymerase necessitates the intervention of specific factors in order to restart elongation or be removed from the DNA template.
+For example, when DNA damage causes \gls{pol2} to arrest, a number of sequentially acting E3 ubiquitin ligases are required to attach ubiquitin chains on the polymerase and lead to its degradation, allowing DNA repair factors to access the damage. 
+The current model posits that Rsp5 acts to monoubiquitinylate \gls{pol2}, while the Elc1/Cul3 complex elongates that chain, resulting in the recruitment of the proteasome and disassembly of the elongation complex through degradation of the polymerase.
+Recently this mechanism has been implicated in resolving transcriptional arrest caused by transcription factors.
 Notably, it has been recently shown that presence of the transcription factor Reb1 on DNA is sufficient to pause the elongation of \gls{pol2} in a way that is unaffected by backtracking; ultimately resulting in the disassembly of the elongation complex and release of the transcript \cite{colin:2014:roadblock}.
  
 
@@ -94,7 +98,7 @@ The two main phosphorylation states, \sert{} and \serf{}, are dominant at the 3'
 During the Initiation phase of transcription, the \gls{ctd} of \gls{pol2} starts off unphosphorylated (see Fig: \ref{fig:ctdPhospho}).
 When the \gls{pic} is fully assembled, Kin28, a catalytic subunit of the general transcription factor TFIIH, phosphorylates the CTD heptapeptide on \serf{}.
 In \cer{}, the \gls{ctd} remains mostly \serf{} phosphorylated for the first 450 nucleotides of transcription elongation \citep{mayer:2010:uniform}. 
-After this point the combined action of the \serf{}-phosphatase Rtr1 \citep{mosley:2009:rtr1, hunter:2016:phosphatase} and the \sert{}-kinases Bur1 and Ctk1 \citep{qiu:2009:phosphorylation} make \sert{} the most prominent mark \footnote{
+After this point the combined action of the \serf{}-phosphatase Rtr1 \citep{mosley:2009:rtr1, hunter:2016:phosphatase} and the \sert{}-kinases Bur1 and Ctk1 \citep{qiu:2009:phosphorylation} make \sert{} the most prominent mark\footnote{
 It is interesting to note that the phosphorylation state of \gls{pol2} \gls{ctd} is independent of transcript length, but exclusively depends on the amount of nucleotides from the \gls{tss}. 
 This will have important implications for the termination of non-coding transcripts.}.
 Despite phosphorylation of \sert{} reaching saturation about 600 nucleotides from the \gls{tss} \citep{mayer:2010:uniform}, \serf{} phosphorylation is still present on many repeats, resulting in the presence of a double phosphorylation pattern with important functional consequences (see below).
