@@ -19,7 +19,7 @@
 
 %%%%%% /disabled for debugging purposes
 \RequirePackage{color}
-
+\RequirePackage{pdfpages}
 \RequirePackage{graphicx}
 %\RequirePackage{fixltx2e} %not required anymore
 \RequirePackage{setspace}

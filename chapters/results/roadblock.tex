@@ -1,0 +1,87 @@
+\chapter{Termination of RNA polymerase II throuh a road-block mechanism}
+
+In section XX I described how road-block termination is an effective tool in transcription termination of RNAPI at rDNA loci. 
+At the beginning of my doctoral studies, the laboratory had found that road-block can also serve as a termination mechanism for RNA polymerase II, and that one of the molecular effectors of this phenomenon was the general regulatory factor Reb1. 
+A major part of my thesis work was therefore dedicated to exploring the notion of road-block applied to RNA polymerase II through the use of genome-wide techniques.
+
+This work led to the identification of other effectors of road-block termination and the better characterization of the genome-wide extent of this pathway. 
+The work is summarized in two manuscripts presented below. 
+The first describes road-block termination elicited by Reb1 and mechanistically characterizes the pathway.
+The second identifies other effectors of road-block and further explores its genome-wide extent.
+
+\section{Road-block termination by Reb1 restricts cryptic and readthrough transcription}
+
+In this work, I focused on the genome-wide characterization of road-block termination. 
+Previous work form the group had identified specific hallmarks of road-block in synthetic sequences, such as the accumulation of RNAPII about 15-20 nucleotides upstream of Reb1 binding sites. 
+I therefore used genome-wide RNAPII occupancy datasets to probe Reb1 binding sites on the genome and determine whether they are associated with polymerase pausing. 
+In order to achieve this, I devised an algorithm able to identify peaks of polymerase pausing and their position relative to Reb1 binding sites (see methods). 
+Additionally, I analyzed a set of synthetic sequences known to elicit Reb1-dependent road-bock termination in order to expand the binding consensus for Reb1. 
+
+\clearpage
+
+
+\includepdf[pages={1-},scale=0.75]{papers/reb1+sup.pdf}
+
+\clearpage
+
+\section{Rap1 Paper}
+
+Following the publication of Colin et al., I focused on the possibility that other DNA binding proteins might be effectors of road-block termination in vivo. 
+Besides Reb1, Rap1 had also been identified as a possible road-blocking factor from previous experiments. 
+This led me to investigate the family of General Regulatory Factors, which resulted in the identification of several other possible road-blocking factors belonging to this class, such as Abf1. 
+Using a combination of already published datasets and newly generated data, I applied meta-gene analyses and other computational techniques to identify genomic loci associated with polymerase pausing and termination events. 
+
+
+\clearpage
+
+
+%\includepdf[pages={1-},scale=0.75]{}
+RAP HERE
+
+\clearpage
+
+\section{Discussion}
+
+
+In these two manuscripts we describe a novel non-canonical termination pathway for RNA polymerase II.
+General regulatory factors Reb1 and Rap1—and possibly other genomic features such as centromeres, tRNAs, and binding sites for the transcription factor Abf1—were shown to stall RNAPII, prevent elongation and result in transcription termination.  
+Road-block termination was shown to be an extensively used mechanism to terminate polymerases that escape canonical termination pathways. 
+However, road-block termination is able to act independently of other termination mechanisms and has no effect on their efficiency. 
+
+\subsection{Fail-safe termination}
+
+General regulatory factors are a family of transcription factors that regulate a substantial amount of genes in S.cerevisiae (10-15\% (rhee and pugh)). 
+We showed that three members of this family, Reb1, Rap1, and Abf1, are bona fide road-block terminators in addition to their activator roles. 
+Because road-block termination results in the production of unstable transcripts, we speculate that its functional relevance concerns more the control of pervasive transcription rather than the production of functional RNAs. 
+Indeed, a number of GRF binding sites were found to be associated with termination of CUTs or other non-functional transcripts. 
+Moreover, we show that sites of road-block in proximity of canonical CPF terminators still display accumulation of RNAPII, suggesting that constitutive readthrough at CPF terminators is a major source of road-block dependent transcripts. 
+This evidence is consistent with a model where road-block would serve as a fail-safe termination mechanism to prevent transcriptional readthrough (or other spurious transcription events) from invading promoter regions. 
+This notion is particularly relevant in yeast, where, due to the compact nature of the genome, unchecked transcriptional readthrough is very likely to interfere with other biological processes.  
+
+
+We also investigated the possibility that road-block could enhance the efficiency of upstream termination mechanisms (NNS or CPF). 
+Road-block could stall the polymerase and allow either Rat1 or Sen1 to more easily catch-up with it. 
+In our analyses, depletion of Rap1 caused no change in CPF termination efficiency for genes upstream of Rap1 binding sites, suggesting that no direct functional interaction exists between the two pathways. 
+In vivo experiments where Reb1 and Rap1 binding sites were inserted in the HSP104 gene show that these factors can elicit termination even when no other terminator sequences are present nearby. 
+Moreover, we show that disassembly of the elongation complex can occur with a mechanism that is distinct from that of either CPF or NNS. 
+Interestingly, the same mechanism employed to disassemble the elongation complex at sites of road-block has been implicated as part of the DNA damage response [REF]. 
+In this context, Rsp5 leads to degradation of polymerases that are unable to elongate due to DNA damage, thereby allowing repair factors to access the damaged strand. 
+We therefore speculate that transcription termination through degradation of Rpb1 is a general mechanism that affects polymerases that are unable to elongate, either due to road-block by DNA binding factors, or to other environmental conditions.
+
+\subsection{Road-block termination as promoter of genome stability}
+
+In addition to transcription factors, we identified several other genomic loci that were associated with strong polymerase pausing. 
+Although we provided no formal proof that these loci represent true transcription termination sites, the presence of several hallmarks of road-block termination (position and shape of RNAPII pausing peaks and presence of RNA 3’ ends) supports this hypothesis. 
+Both centromeres and tRNA genes displayed localized increases of polymerase occupancy at their borders, suggesting that the protective role that road-block termination has at promoter regions could extend to other loci that are sensitive to transcriptional interference. 
+
+Strong transcription through a centromeric region leads to loss of the parent chromosome (ref?) in the following mitotic cycles. 
+It is therefore possible that even physiological amounts of readthrough or pervasive transcription could negatively impact the efficiency of the processes associated with centromeres. 
+We observe strong polymerase pausing in the vicinity of Cbf1 binding sites within the centromere, and speculate that presence of this protein on DNA could be an effector of road-block. 
+Interestingly, deletion of Cbf1 is not lethal but is associated with chromosomal instability (cai and davis 1990), although whether this is due to increase in transcriptional interference or loss of other centromeric-specific functions elicited by Cbf1 remains unclear.
+
+In addition to centromeres, we find strong polymerase pausing associated with both ends of tRNA genes. 
+Earlier studies provided the proof of principle that tRNA genes could be involved in preventing transcriptional interference (korde et al, 2014), citing the presence of TFIIIB as a requisite for the effect. 
+In this study we detected strong polymerase pausing in close proximity of TFIIIB binding sites in about 70 \% of all tRNA genes, suggesting that RNAPIII initiation complex provides a strong barrier to transcription elongation. 
+In addition to this putative road-block, we found that polymerases were also stalling in the vicinity of RNAPIII termination site. 
+Although we do not know what the cause for this accumulation is, we speculate that a head-to-head collision between RNAPII and terminating RNAPIII might prevent elongation. 
+Alternatively, a gene-looping mechanism could result in a similar molecular phenotype by physically linking the RNAPIII termination site with the initiation complex. Overall, it is tempting to speculate that the high rate of transcription of RNAPIII genes makes them particularly susceptible to transcriptional interference, and therefore resulted in the presence of protective mechanisms to prevent it.
