@@ -1,21 +1,3 @@
-%general intro on transcription
-
-Transcription of DNA into RNA intermediates constitutes the first step in gene expression.
-Even minute changes in transcription patterns can upset the balance of many essential cellular constituents, generating a cascade of responses with significant repercussions on every biological process.
-Because of this massive potential, transcription is one of the most finely regulated events in the cell and according to the \gls{sgd} \cite{cherry:2012:saccharomyces} gene ontology annotation, 1231 out of 6691 genes in \cer{} (18\%) can influence or directly take part in the transcriptional process.
-
-In eukaryotes, three distinct RNA polymerases exist. \gls{pol1}: responsible for the transcription of ribosomal RNA; \gls{pol2}: responsible for the transcription of both protein coding genes and many non-coding RNAs; and \gls{pol3}: responsible mainly for the transcription of tRNAs and \gls{rrna}. 
-
-Irrespective of the type of RNA polymerase, transcription is divided into three fundamental stages: initiation involves the assembly of an RNA polymerase on a promoter sequence and its interaction with general transcription factors; elongation occurs when the polymerase escapes the promoter and is actively transcribing the DNA template; finally, termination determines the end of the process and results in the disassembly of the elongation complex and the release of the transcript into the nucleus. 
-A number of specific factors, post-translational modifications of the polymerase, and structural elements such as chromatin can regulate each of these stages.
-
-The following sections will explore and characterize the major actors in the transcriptional process of \gls{pol2} in yeast, separating between the three phases outlined above.
-I will describe the initiation phase by talking about how regions of transcription initiation are defined in the genome, what are the essential components required to initiate transcription and the mechanistics of the transition from initiation to elongation.
-In the next phase, elongation, i will describe the mechanics of elongation, how the polymerase deals with obstacles, and how it can coordinate different maturation steps according to its position.
-Finally, because of its importance for the work described in this manuscript, the phase of transcription termination will be split so that each termination pathway can be described in some level of detail; with particular attention to the recent rise of non-canonical termination pathways as a fail-safe mechanism to maintain proper gene expression across the genome.   
-
-\section{Initiation}
-
 Initiation is the first step in any transcription event. 
 It therefore needs to be accurate in when and where it occurs. 
 Transcription initiation fundamentally relies on the assembly of the \gls{pic} (a super-complex 1.5 megadaltons in size  containing \gls{pol2} \cite{fazal:2015:realtime}) on chromatin.
@@ -25,7 +7,7 @@ In addition to spatial regulation, timing and intensity of transcription initiat
 Any specific promoter can be finely tuned by the binding of gene-specific transcription factors, that can act as either enhancers or repressors; modulating initiation efficiency either constitutively or in response to environmental effects. 
 Finally, when the \gls{pic} is fully assembled, it will start several rounds of abortive initiation, eventually escaping the promoter and entering productive elongation.
 
-\subsection{Spatial definition: Chromatin structure and core promoter elements}
+\section{Spatial definition: Chromatin structure and core promoter elements}
 
 Chromatin is a higher order structure that forms when DNA wraps around histones, proteins that can efficiently arrange loose DNA into compact structures.
 The simplest unit of chromatin consists of 140 nucleotides of DNA tightly wrapped around a histone, forming a nucleosome.
@@ -50,7 +32,7 @@ TFIID and \gls{saga} have largely overlapping roles in activating gene expressio
 While TFIID generally dominates over house-keeping genes that do not require regulation, \gls{saga}---and as a consequence \gls{tbp} binding---has a larger effect over highly regulated and stress-inducible genes \citep{huisinga:2004:genomewide}.
 The binding of either complex represents the first step towards assembly of other general transcription factors into the \gls{pic}.
 
-\subsection{Temporal definition: Gene-specific transcription factors}
+\section{Temporal definition: Gene-specific transcription factors}
 While nucleosome positioning and core promoter elements define where transcription should initiate, they do not generally actively regulate it on their own.  
 In the cell, many genes need to be activated in response to specific conditions or external stimuli.
 These regulated genes are generally inactive and become actively transcribed only when the conditions are met.
@@ -62,7 +44,7 @@ Alternatively, transcription factors can constitutively repress their target gen
 Genome-wide studies on transcription factor organization highlighted the combinatorial potential that emerges when several transcription factors interact with the same promoters\cite{harbison:2004:transcriptional}.
 Regulation of a single promoter by several distinct transcription factors can exploits their different requirements---qualitative or quantitative--- to force the emergence of complex regulatory logic.
 
-\subsection{PIC assembly and promoter clearance}
+\section{PIC assembly and promoter clearance}
 Assembly of the \acrlong{pic} starts with the binding of either TFIID or \gls{saga} to promoter DNA.
 The presence of \gls{tbp} in these complexes modifies the structure of DNA, allowing the step-wise recruitment of several general transcription factors and of \gls{pol2} \citep[For review see][]{sainsbury:2015:structural}.
 
