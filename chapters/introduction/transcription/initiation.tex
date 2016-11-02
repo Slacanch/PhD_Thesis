@@ -16,7 +16,7 @@ As transcription relies on assembly of \gls{pol2} and the \gls{pic} on DNA to co
 The insulation of DNA by nucleosomes has been harnessed by the cell and made into a regulatory mechanism that can spatially define where transcription initiates, as transcription factors must bind DNA for this to happen. 
 To allow transcription factors to associate with DNA in promoter regions, these are always associated with an \gls{nfr}, an area of the genome where nucleosomes are depleted, leaving naked DNA available for binding.
 Although certain sequence elements can passively discourage nucleosome association, several complexes can actively mediate depletion of nucleosomes from promoter regions, such as SWI1/SNF and the closely related RSC complex.
-These complexes can be recruited in two ways: through sequence specificity \cite{badis:2008:library, kubik:2015:two}or through recruitment by gene-specific transcription factors such as Reb1p, Abf1p, and Rap1p to promoter regions \citep{floer:2010:rscnucleosome, hartley:2009:mechanisms, spain:2014:rsc, badis:2008:library}.
+These complexes can be recruited in two ways: through sequence specificity \cite{badis:2008:library, knight:2014:two} or through recruitment by gene-specific transcription factors such as Reb1p, Abf1p, and Rap1p to promoter regions \citep{floer:2010:rscnucleosome, hartley:2009:mechanisms, spain:2014:rsc, badis:2008:library}.
 
 While chromatin defines the position of transcription initiation, core promoter elements provide specificity for many early-acting general transcription factors. 
 A number of promoter elements were identified in metazoans, where they have been shown to regulate position and intensity of transcription initiation.
@@ -45,12 +45,20 @@ Genome-wide studies on transcription factor organization highlighted the combina
 Regulation of a single promoter by several distinct transcription factors can exploits their different requirements---qualitative or quantitative--- to force the emergence of complex regulatory logic.
 
 \section{PIC assembly and promoter clearance}
+
 Assembly of the \acrlong{pic} starts with the binding of either TFIID or \gls{saga} to promoter DNA.
 The presence of \gls{tbp} in these complexes modifies the structure of DNA, allowing the step-wise recruitment of several general transcription factors and of \gls{pol2} \citep[For review see][]{sainsbury:2015:structural}.
 
+TFIIA and TFIIB are the first factors to make contact with TBP, stabilising its interaction with DNA.
+However, while TFIIA simply acts as an auxiliary factor and is dispensable \citep{imbalzano:1994:transcription}, TFIIB is required for \gls{pol2} recruitment \citep{bushnell:2004:structural}.
+The presence of TFIIB  acts as a platform for TFIIF docking. 
+The addition of TFIIF has the double effect of recruiting \gls{pol2} to active promoters (\gls{pol2} is bound to TFIIF when in free form \citep{rani:2004:rna}) and of further stabilising the whole \gls{pic}. 
+Despite the inclusion of \gls{pol2} in the forming \gls{pic}, at this stage promoter DNA is firmly wound-up in a double helix and therefore 
+%positioning of this figure is messy, play around. know that if you insert a figure with no space
+%between the text the compiler will not separate the paragraph.
 \begin{wrapfigure}{}{0.4\textwidth}
 \centering
-\includegraphics[width=5.094cm]{figures/introduction/picAssembly} %5.295
+\includegraphics[width=5.095cm]{figures/introduction/picAssembly} % 5.094cm
 \caption[Stepwise PIC assembly]{
 Stepwise assembly of general transcription factors and \gls{pol2} on a promoter.
 adapted from \cite{sainsbury:2015:structural}.
@@ -58,15 +66,11 @@ adapted from \cite{sainsbury:2015:structural}.
 \label{fig:picAssembly}
 \centering
 \end{wrapfigure}
-
-TFIIA and TFIIB are the first factors to make contact with TBP, stabilising its interaction with DNA.
-However, while TFIIA simply acts as an auxiliary factor and is dispensable \citep{imbalzano:1994:transcription}, TFIIB is required for \gls{pol2} recruitment \citep{bushnell:2004:structural}.
-The presence of TFIIB  acts as a platform for TFIIF docking. 
-The addition of TFIIF has the double effect of recruiting \gls{pol2} to active promoters (\gls{pol2} is bound to TFIIF when in free form \citep{rani:2004:rna}) and of further stabilising the whole \gls{pic}. 
-Despite the inclusion of \gls{pol2} in the forming \gls{pic}, at this stage promoter DNA is firmly wound-up in a double helix and therefore the ternary complex\footnote{The ternary complex is defined as the three-way interaction between DNA, RNA, and \gls{pol2} that forms within transcribing polymerases} required for transcription cannot yet form.
+the ternary complex\footnote{The ternary complex is defined as the three-way interaction between DNA, RNA, and \gls{pol2} that forms within transcribing polymerases} required for transcription cannot yet form.
 TFIIE and TFIIH are recruited to the \gls{pic} to solve this problem.
 TFIIE acts as a bridge between \gls{pol2} and TFIIH, who contains an ATPase module and is able to unwind promoter DNA \citep{holstege:1996:opening}.
 This will eventually contribute to DNA melting and the formation of the open \gls{pic}, a structural variant that precedes the shift into elongation.
+
 
 
 The order of stepwise assembly of general transcription factors into a functional \gls{pic} was first discovered \invitro{} \cite{buratowski:1989:five}. 
@@ -83,6 +87,6 @@ It then extends forward, allowing the process of transcription to begin.
 Polymerases at this stage, however, have to contend with the fact that the RNA-DNA hybrid is too short to be stable.
 According to \invitro{} studies, forming a sufficiently long---and therefore stable--hybrid requires several rounds of abortive initiation, where the small RNA is displaced from the template and released.
 When the RNA-DNA hybrid reaches a length of about 10 nucleotides, the upstream half of the bubble, which now spans 17-18 nucleotides, collapses, suddenly closing \cite{holstege:1997:three}.
-This event marks the detachment of what will eventually become the elongation complex from the scaffold of general transcription factors that is going to be retained at the promoter \cite{pal:2005:role}.
+This event marks the detachment of what will eventually become the elongation complex from the scaffold of general transcription factors that is going to be retained at the promoter \cite{pal:2004:role}.
 
 \clearpage
