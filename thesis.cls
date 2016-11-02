@@ -6,22 +6,23 @@
 %\RequirePackage[l2tabu, orthodox]{nag} %%%uncomment to see what you've been doing wrong
 \RequirePackage[utf8x]{inputenc}
 %%%%%disabled for debugging purposes
-%\RequirePackage{hyperref}
-%%hyperref options
-%\hypersetup{
-%  colorlinks   = true, %Colours links instead of ugly boxes
-%  urlcolor     = black, %Colour for external hyperlinks
-%  linkcolor    = black, %Colour of internal links
-%  citecolor   = SchoolColor %Colour of citations
-%}
-%\RequirePackage[colorinlistoftodos]{todonotes}
-\RequirePackage[disable]{todonotes}
+\RequirePackage[xindy,toc]{glossaries}
+\RequirePackage{hyperref}
+%hyperref options
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = black, %Colour for external hyperlinks
+  linkcolor    = black, %Colour of internal links
+  citecolor   = SchoolColor %Colour of citations
+}
+\RequirePackage[colorinlistoftodos]{todonotes}
 
-%%%%%% /disabled for debugging purposes
+
+\RequirePackage{makecell}
+\RequirePackage{wrapfig}
 \RequirePackage{color}
 \RequirePackage{pdfpages}
 \RequirePackage{graphicx}
-%\RequirePackage{fixltx2e} %not required anymore
 \RequirePackage{setspace}
 \doublespacing
 \RequirePackage{parskip}
@@ -69,7 +70,7 @@
 
 
 %glossaries
-\RequirePackage[xindy,toc]{glossaries}
+
 %\RequirePackage{glossary-mcols} this and the following are required to put the glossary in two columns.
 %\setglossarystyle{mcolindex} 
 \loadglsentries{acronym_definition}
