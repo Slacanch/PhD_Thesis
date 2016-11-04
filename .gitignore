@@ -1,7 +1,7 @@
 *.aux
 *.bbl
 *.blg
-*.pdf
+main.pdf
 *.log
 *.gz
 *.toc
