@@ -1,6 +1,6 @@
-%todo{pre-RC and other acronyms}
+\chapter{Transcription and Replication} %todo{pre-RC and other acronyms}
 DNA replication is the biological process that duplicates a cell’s genetic information so that, upon division, daughter cells can inherit a full copy of the genome. 
-Replication starts at loci named replication origins. The replisome begins to assemble at these loci during the G1 phase (see below for details) and, upon transition to S-phase, splits into two replicative forks that elongate in opposite directions (fig X). 
+Replication starts at loci named replication origins. The replisome begins to assemble at these loci during the G1 phase (see below for details) and, upon transition to S-phase, splits into two replicative forks that elongate in opposite directions (fig \ref{fig:repSteps}). 
 This process needs to be tightly regulated, as over- or under-replication can lead to severe genome instability. 
 
 
@@ -9,20 +9,7 @@ The genome of S.cerevisiae contains 410 confirmed origins (also called ARS, Auto
 Although studies on replication initiation detected discernable patterns in origin specification, studies on single cells have shown that origin selection is not entirely deterministic, but rather a stochastic process \cite{patel:2006:dna, Czajkowsky:2008:dna}. 
 This notion raises the question of which elements (either intrinsic to the replication process, or independent of it) can influence origin specification.
 
-
 In this chapter I will describe what qualifies a replication origin and explore the mechanisms of origin specification in S.cerevisiae, with particular emphasis on the controversial relationship between transcription and DNA replication.
-
-
-
-\begin{figure}[ht]
-
-\centering
-\includegraphics[width=\textwidth]{figures/introduction/repSteps}
-\caption[Stepwise mechanism of DNA replication]{DNA replication takes place in two distinct steps. First ORC is required to bind to replication origins during the G1-phase and recruit the Pre-replication complex. Second, upon entry in S-phase, the pre-RC (among others) is phosphorylated and the full replisome can assemble and eventually fire.}
-\label{fig:repSteps}
-
-\end{figure}
-
 
 \section{Origins of replication}
 
@@ -32,17 +19,25 @@ This plasticity lessens the selective pressure for any particular origin, as lon
 
 
 Origins in S.cerevisiae are usually small (100-150 bp), preferentially intergenic, and AT-rich sequences \cite{raghuraman:2016:sequence}. 
-Origin-specific motifs are degenerate and generally not conserved. Despite this heterogeneity, several common consensuses were identified as promoters of origin activity and classified as A and B elements\footnote{it should be noted that C elements were also described by celniker and colleagues \cite{celniker:1984:deletion}. However, evidence for the relevance of these motifs in vivo is lacking and they will not be discussed here.}.
+Origin-specific motifs are degenerate and generally not conserved. Despite this heterogeneity, several common consensuses were identified as promoters of origin activity and classified as A and B elements\footnote{it should be noted that C elements were also described by celniker and colleagues \cite{celniker:1984:deletion}. However, evidence for the relevance of these motifs in vivo is lacking and they will not be discussed here.} (fig \ref{fig:originSchemaIntro}).
 
 
 \paragraph{A element}
 The only essential sequence element, the A element is also called ACS (ARS consensus sequence). 
-The ACS is a non-palindromic 11 bp consensus ([AT]TTTA[TC][AG]TTT[AT])\cite{celniker:1984:deletion,nieduszynski:2006:genomewide} that is the binding site of a protein complex called ORC (Origin Recognition Complex). 
+The ACS is a non-palindromic 11 bp consensus (see fig \ref{fig:originSchemaIntro})\cite{celniker:1984:deletion,nieduszynski:2006:genomewide} that is the binding site of a protein complex called ORC (Origin Recognition Complex). 
 Binding of this complex to the origin represents the first step in the replicative process (see below)\cite{diffley:1992:proteindna}.
 
+\begin{figure}[ht]
+
+\centering
+\includegraphics[width=\textwidth]{figures/results/acs}
+\caption[ACS consensus and arrangement relative to other origin DNA elements]{Cartoon showing the most typical arrangement of sequence elements within origins. the ACS is required, while several B elements contribute to origin specification dowstream of the T-rich strand of the ACS.}
+\label{fig:originSchemaIntro}
+
+\end{figure}
 
 \paragraph{B elements}
-A family of motifs with little sequence conservation, B elements are mainly AT-rich and always map downstream of the T-rich strand of the ACS (fig X)\cite{raghuraman:2016:sequence}. 
+A family of motifs with little sequence conservation, B elements are mainly AT-rich and always map downstream of the T-rich strand of the ACS (fig \ref{fig:originSchemaIntro})\cite{raghuraman:2016:sequence}. 
 While a match to the A element consensus is found in every origin \cite{celniker:1984:deletion}, no individual B element is universally required for origin activity \cite{marahrens:1992:yeast,lucas:2003:dynamics}. Collectively, however, B elements constitute a requirement for proper origin activity.
 
 B elements were originally thought to facilitate DNA unwinding due to their AT-richness \cite{huang:1993:dna}. Subsequent studies, however, revealed that some B elements are playing a more active role, contributing to the recruitment of the replisome \cite{wilmes:2002:b2}.
@@ -77,6 +72,14 @@ Replicative helicases are multisubunit complexes composed of MiniChromosome Main
 In S-phase, MCM2-7 will serve both as platforms for the assembly of other replisome components and as driving force for replicative fork elongation. 
 It is important to note that during the first step of replication, only a subset of all origins are licensed. This subset is influenced by specific origin properties (e.g. strength of the ORC binding site, nucleosome occupancy etc.), but not deterministically chosen.
 
+\begin{figure}[ht]
+
+\centering
+\includegraphics[width=\textwidth]{figures/introduction/repSteps}
+\caption[Stepwise mechanism of DNA replication]{DNA replication takes place in two distinct steps. First ORC is required to bind to replication origins during the G1-phase and recruit the Pre-replication complex. Second, upon entry in S-phase, the pre-RC (among others) is phosphorylated and the full replisome can assemble and eventually fire.}
+\label{fig:repSteps}
+
+\end{figure}
 
 The end of the G1-phase and the beginning of the S-phase marks the end of the licensing step and the beginning of the second step of DNA replication: the activation step. 
 During this step, dormant pre-replication complexes at licensed origins activate, assemble into the active replisome and eventually fire. 

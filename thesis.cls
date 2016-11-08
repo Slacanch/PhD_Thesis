@@ -179,9 +179,9 @@
 \newcommand{\jurygradeB}{Derecteur de recherche}
 \newcommand{\juryroleB}{Rapporteur}
 %%% Jury member n3 (Rapporteur) %%%
-\newcommand{\jurynameC}{Claude Thermes}
+\newcommand{\jurynameC}{Vincent Geli}
 \newcommand{\jurygenderC}{M.} % M. or Mme. / Mrs.
-\newcommand{\juryadressC}{I2BC}
+\newcommand{\juryadressC}{CRCM}
 \newcommand{\jurygradeC}{Directeur de recherche}
 \newcommand{\juryroleC}{Rapporteur}
 %%% Jury member n6 (Examinateur) %%%
@@ -213,10 +213,11 @@
 	\addcontentsline{toc}{chapter}{List of Figures}
 	\listoffigures 
 	\clearpage
-	\addcontentsline{toc}{chapter}{List of Tables}
-	\listoftables
-	\clearpage
-	\printglossaries
+	%\addcontentsline{toc}{chapter}{List of Tables}
+	%\listoftables
+	%\clearpage
+	\addcontentsline{toc}{chapter}{Preface}
+	\preface
 	\clearpage
 	\addcontentsline{toc}{chapter}{Acknowledgments}
 	\acknowledgments
@@ -249,9 +250,9 @@
 \singlespacing
 \begin{tikzpicture}[remember picture,overlay,color=blue!20!red!45!black!75!]
 	\draw[very thick]
-		([yshift=-160pt,xshift=45pt]current page.north west)--     
-		([yshift=-160pt,xshift=-25pt]current page.north east)--    
-		([yshift=35pt,xshift=-25pt]current page.south east)--      
+		([yshift=-160pt,xshift=45pt]current page.north west)--   %160  
+		([yshift=-160pt,xshift=-45pt]current page.north east)--    
+		([yshift=35pt,xshift=-45pt]current page.south east)--      
 		([yshift=35pt,xshift=45pt]current page.south west)--cycle; 
 \end{tikzpicture}
 
@@ -395,6 +396,19 @@ Composition du Jury :
 	\clearpage
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%Preface%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                          %
+%                        Preface                           %
+%                                                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\preface}{
+	\chapter*{Preface}
+	\noindent
+	\input{frontmatter/preface}
+	\vspace*{\fill} %\newpage
+	\clearpage
+}
+
 %%%%%%%%%%%%%%%%%%%%%%ACKNOWLEDGEMENTS%%%%%%%%%%%%%%%%%%%%%%
 %                                                          %
 %                        ACKNOWLEDGEMENTS                  %
@@ -414,17 +428,13 @@ Composition du Jury :
 %                                                          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\backmatter}{
+\newcommand{\backpage}{
 \clearpage
 \thispagestyle{empty}
 \begin{textblock}{10}(2,.3)
 \logoED
 \end{textblock}
-
-
 \begin{textblock}{11}(2.3,1.6) %{13.9}(1.7,1.6)
-
-
 \vfill
 \setlength{\fboxsep}{5mm}
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
@@ -452,23 +462,25 @@ Composition du Jury :
 \end{multicols}}
 }}
 
-
-
-
-
 \vfill
 \end{textblock}
-
 
 \begin{textblock}{13}(13,14.6)
 \includegraphics[height=2cm]{logo/logoEgrey.png}
 \end{textblock}
 
-
-
 \parindent=0pt 
 \begin{textblock}{10}(2.2,14.8)\color{blue!20!red!45!black}{\footnotesize{\textbf{Universit\'e Paris-Saclay}\\Espace Technologique / Immeuble Discovery \\
 Route de l'Orme aux Merisiers RD 128 / 91190 Saint-Aubin, France}}
 \end{textblock}
+}
 
+
+\newcommand{\backmatter}{
+\printglossaries
+\singlespacing
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{acm}
+\bibliography{references,fixed_references}
+\backpage
 }

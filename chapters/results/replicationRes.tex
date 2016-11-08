@@ -8,13 +8,13 @@ In this work I applied metagene analyses to several published datasets in order 
 
 \section{Global visualization of transcription around replication origins}
 
-In order to have a global view of transcription around replication origins, we decided to produce aggregate plots of polymerase occupancy around sites of replication initiation. This powerful technique allows to visualize average transcription levels at a single nucleotide resolution across any number of genomic loci, but requires a common feature along which all loci can be aligned (e.g. an annotated feature or a sequence element, such as a TSS or a transcription factor binding site). Because of the nature of replication origins, we chose the ACS—the only sequence element absolutely required for origin activity—as our common feature. 
+In order to have a global view of transcription around replication origins, we decided to produce aggregate plots using published polymerase occupancy datasets \cite{schaughency:2014:genomewide} around sites of replication initiation. This powerful technique allows to visualize average transcription levels at a single nucleotide resolution across any number of genomic loci, but requires a common feature along which all loci can be aligned (e.g. an annotated feature or a sequence element, such as a TSS or a transcription factor binding site). Because of the nature of replication origins, we chose the ACS—the only sequence element absolutely required for origin activity—as our common feature. 
 
 \begin{figure}[ht]
 
 \centering
 \includegraphics[width=\textwidth]{figures/results/acs}
-\caption[ACS consensus an arrangement relative to other origin DNA elements]{Cartoon showing the most typical arrangement of sequence elements within origins. the ACS is required, while several B elements contribute to origin specification dowstream of the T-rich strand of the ACS.}
+\caption[ACS consensus and arrangement relative to other origin DNA elements]{Cartoon showing the most typical arrangement of sequence elements within origins. the ACS is required, while several B elements contribute to origin specification dowstream of the T-rich strand of the ACS.}
 \label{fig:originSchema}
 
 \end{figure}
@@ -162,9 +162,14 @@ Julien Soudet, one of our collaborators, generated some preliminary data measuri
 \centering
 \includegraphics[width=\textwidth]{figures/results/JScorrelations}
 \caption[correlations between transcription and replication efficiency in a NNS defective strain]{Scatterplots of relative sense and antisense transcription levels versus relative replication efficiencies. Each axis displays the log$_2$ ratio between levels of transcription or replication efficiency in a NNS-defective strain relative to wild type. In this non-physiological condition, both sense and antisense transcription levels anticorrelate with replication efficiency. However, antisense transcription levels remain more strongly associated with poor replicative efficiency.}
-\label{fig:model}
+\label{fig:JS}
 
 \end{figure} 
 
 
-Overall, downregulation of replicative activity seems to be a function of the quantity of polymerases that transcribes through the core sequence elements of the origin. However, it is difficult to assess the mechanistic reasons for this phenotype. Transcription might directly displace or otherwise interfere with elements of the pre-RC. Alternatively, it is tempting to speculate that transcription-dependent nucleosome deposition might interfere with assembly or firing of the replication complex.
+Overall, downregulation of replicative activity seems to be a function of the quantity of polymerases that transcribes through the core sequence elements of the origin. 
+However, it is difficult to assess the mechanistic reasons for this phenotype. 
+Transcription might directly displace or otherwise interfere with elements of the pre-RC. 
+Alternatively, it is tempting to speculate that transcription-dependent nucleosome deposition might interfere with assembly or firing of the replication complex.
+
+\clearpage
