@@ -322,6 +322,9 @@ Composition du Jury :
 \restoregeometry
 \doublespacing
 \end{large}
+\newpage
+\thispagestyle{empty}
+\mbox{}
 }
 
 
@@ -355,7 +358,7 @@ Composition du Jury :
 	\singlespace
 	\newpage
 	\pagenumbering{roman}
-	\setcounter{page}{3}
+	\setcounter{page}{4}
 	\pagestyle{fancy}
 	\renewcommand{\headrulewidth}{0.0pt}
 	\vspace*{35pt}
