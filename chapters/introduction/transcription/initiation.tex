@@ -1,4 +1,4 @@
-\chapter{Transcription Initiation}
+\boldchapter{Transcription Initiation}
 Initiation is the first step in any transcription event. 
 It therefore needs to be accurate in when and where it occurs. 
 Transcription initiation fundamentally relies on the assembly of the \gls{pic} (a super-complex 1.5 megadaltons in size  containing \gls{pol2} \cite{fazal:2015:realtime}) on DNA.
@@ -8,7 +8,9 @@ In addition to spatial regulation, timing and intensity of transcription initiat
 Any specific promoter can be finely tuned by the binding of gene-specific transcription factors, that can act as either enhancers or repressors; modulating initiation efficiency either constitutively or in response to environmental effects. 
 Finally, when the \gls{pic} is fully assembled, it will eventually escape the promoter and enter productive elongation.
 
+\singlespacing
 \section{Spatial definition: Chromatin structure and core promoter elements}
+\doublespacing
 
 Chromatin is a higher order structure that forms when DNA wraps around histones, proteins that can efficiently arrange loose DNA into compact structures.
 The simplest unit of chromatin consists of 140 nucleotides of DNA tightly wrapped around a histone, forming a nucleosome.
@@ -33,7 +35,10 @@ TFIID and \gls{saga} have largely overlapping roles in activating gene expressio
 While TFIID generally dominates over house-keeping genes that do not require regulation, \gls{saga}---and as a consequence \gls{tbp} binding---has a larger effect over highly regulated and stress-inducible genes \citep{huisinga:2004:genomewide}.
 The binding of either complex represents the first step towards assembly of other general transcription factors into the \gls{pic}.
 
-\section{Temporal definition: Gene-specific transcription factors}
+\singlespacing
+\section{Temporal definition: gene-specific transcription factors}
+\doublespacing
+
 While nucleosome positioning and core promoter elements define where transcription should initiate, they do not generally actively regulate it on their own.  
 In the cell, many genes need to be activated in response to specific conditions or external stimuli.
 These regulated genes are generally inactive and become actively transcribed only when the conditions are met.
@@ -47,6 +52,8 @@ Regulation of a single promoter by several distinct transcription factors can ex
 
 \section{PIC assembly and promoter clearance}
 
+
+
 Assembly of the \acrlong{pic} starts with the binding of either TFIID or \gls{saga} to promoter DNA.
 The presence of \gls{tbp} in these complexes modifies the structure of DNA, allowing the step-wise recruitment of several general transcription factors and of \gls{pol2} \citep[For review see][]{sainsbury:2015:structural}.
 
@@ -54,12 +61,14 @@ TFIIA and TFIIB are the first factors to make contact with TBP, stabilising its 
 However, while TFIIA simply acts as an auxiliary factor and is dispensable \citep{imbalzano:1994:transcription}, TFIIB is required for \gls{pol2} recruitment \citep{bushnell:2004:structural}.
 The presence of TFIIB  acts as a platform for TFIIF docking. 
 The addition of TFIIF has the double effect of recruiting \gls{pol2} to active promoters (\gls{pol2} is bound to TFIIF when in free form \citep{rani:2004:rna}) and of further stabilising the whole \gls{pic}. 
-Despite the inclusion of \gls{pol2} in the forming \gls{pic}, at this stage promoter DNA is firmly wound-up in a double helix and therefore 
-%positioning of this figure is messy, play around. know that if you insert a figure with no space
-%between the text the compiler will not separate the paragraph.
+Despite the inclusion of \gls{pol2} in the forming \gls{pic}, at this stage promoter DNA is firmly wound-up in a double helix and therefore the ternary complex\footnote{The ternary complex is defined as the three-way interaction between DNA, RNA, and \gls{pol2} that forms within transcribing polymerases} required for transcription cannot yet form.
+TFIIE and TFIIH are recruited to the \gls{pic} to solve this problem.
+TFIIE acts as a bridge between \gls{pol2} and TFIIH, who contains an ATPase module and is able to unwind promoter DNA \citep{holstege:1996:opening}.
+This will eventually contribute to DNA melting and the formation of the open \gls{pic}, a structural variant that precedes the shift into elongation.
+
 \begin{wrapfigure}{}{0.4\textwidth}
 \centering
-\includegraphics[width=5.095cm]{figures/introduction/picAssembly} % 5.094cm
+\includegraphics[width=5.275cm]{figures/introduction/picAssembly} % 5.094cm
 \caption[Stepwise PIC assembly]{
 Stepwise assembly of general transcription factors and \gls{pol2} on a promoter.
 adapted from \cite{sainsbury:2015:structural}.
@@ -67,12 +76,6 @@ adapted from \cite{sainsbury:2015:structural}.
 \label{fig:picAssembly}
 \centering
 \end{wrapfigure}
-the ternary complex\footnote{The ternary complex is defined as the three-way interaction between DNA, RNA, and \gls{pol2} that forms within transcribing polymerases} required for transcription cannot yet form.
-TFIIE and TFIIH are recruited to the \gls{pic} to solve this problem.
-TFIIE acts as a bridge between \gls{pol2} and TFIIH, who contains an ATPase module and is able to unwind promoter DNA \citep{holstege:1996:opening}.
-This will eventually contribute to DNA melting and the formation of the open \gls{pic}, a structural variant that precedes the shift into elongation.
-
-
 
 The order of stepwise assembly of general transcription factors into a functional \gls{pic} was first discovered \invitro{} \cite{buratowski:1989:five}. 
 \Invivo{}, however, there is evidence for the activity of the mediator complex in providing additional assembly pathways \cite{esnault:2008:mediatordependent}.

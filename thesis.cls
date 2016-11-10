@@ -6,7 +6,7 @@
 %\RequirePackage[l2tabu, orthodox]{nag} %%%uncomment to see what you've been doing wrong
 \RequirePackage[utf8x]{inputenc}
 %%%%%disabled for debugging purposes
-\RequirePackage[xindy,toc]{glossaries}
+\RequirePackage[style=super,nonumberlist,nopostdot,xindy,toc]{glossaries}
 \RequirePackage{hyperref}
 %hyperref options
 \hypersetup{
@@ -18,6 +18,7 @@
 %\RequirePackage[colorinlistoftodos]{todonotes}
 \RequirePackage{makecell}
 \RequirePackage{wrapfig}
+\RequirePackage{amsmath}
 \RequirePackage{color}
 \RequirePackage{pdfpages}
 \RequirePackage{graphicx}
@@ -33,6 +34,8 @@
 \setlength{\bibsep}{5pt plus 2ex minus 2ex} %lines between references
 %fonts
 %avoid lone lines at the beginnig or bottom of page, increase if necessary
+
+
 \widowpenalty=300
 \clubpenalty=300
 \raggedbottom %this is to avoid random spaces in the middle of the page, might create problems with floats.
@@ -77,6 +80,12 @@
 \newcommand{\sers}{\textsc{Ser\textsubscript{7}}}
 \newcommand{\FtoT}{5'$\rightarrow$3'}
 \newcommand{\TtoF}{3'$\rightarrow$5'}
+%%chapter commands
+\newcommand{\boldchapter}[1]{
+\singlespacing
+\chapter{\textbf{#1}}
+\doublespacing
+}
 
 %%%%%%% TODOLIST COMMANDS %%%%%%%
 \newcommand{\TODO}[2][]
@@ -114,8 +123,9 @@
 %\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\cftchapfont}{\normalsize \scshape}%%%%%%%%%%%%%%%%%%
 %change name of list of figures and list of tables
-\renewcommand\listfigurename{Figures}
-\renewcommand\listtablename{Tables}
+\renewcommand\listfigurename{\textbf{Figures}}
+\renewcommand\listtablename{\textbf{Tables}}
+\renewcommand{\contentsname}{\textbf{Contents}}
 
 
 %quotchap
@@ -147,7 +157,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
  
  \label{Personnal}
-\newcommand{\PhDname}{M. Tito Candelli} % Civility, first name and name 
+\newcommand{\PhDname}{Tito Candelli} % Civility, first name and name 
 \newcommand{\NNT}{201XX} %% Your NNT numer (the Library will attribute one...)
 \newcommand{\ecodocnum}{577} % Accrediation number
 \newcommand{\ecodoctitle}{Structure et dynamique des syst\`{e}me vivants} % Full name of the doctorale school
@@ -402,7 +412,7 @@ Composition du Jury :
 %                                                          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\preface}{
-	\chapter*{Preface}
+	\chapter*{\textbf{Preface}}
 	\noindent
 	\input{frontmatter/preface}
 	\vspace*{\fill} %\newpage
@@ -415,16 +425,19 @@ Composition du Jury :
 %                                                          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\acknowledgments}{
-	\chapter*{Acknowledgments}
+	\chapter*{\textbf{Acknowledgments}}
 	\noindent
 	\input{frontmatter/thanks}
-	\vspace*{\fill} %\newpage
+	\vspace*{\fill} 
+	\newpage
+	%\thispagestyle{empty}
+	\mbox{}
 	\clearpage
 }
 
-%%%%%%%%%%%%%%%%%%%%%%endmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%backpage%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                          %
-%                        endmatter                         %
+%                        backpage                         %
 %                                                          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -476,7 +489,15 @@ Route de l'Orme aux Merisiers RD 128 / 91190 Saint-Aubin, France}}
 }
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                          %
+%                        backmatter                         %
+%                                                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\backmatter}{
+\addcontentsline{toc}{chapter}{Methods}
+\input{chapters/methods/methods}
 \printglossaries
 \singlespacing
 \addcontentsline{toc}{chapter}{Bibliography}

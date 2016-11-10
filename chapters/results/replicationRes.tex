@@ -1,4 +1,4 @@
-\chapter{The effect of endogenous transcription on origin specification}
+\boldchapter{The effect of endogenous transcription on origin specification}
 
 
 In chapter \ref{termination}, I discussed the mechanisms of DNA replication and how extrinsic factors, such as chromatin structure, can affect origin efficiency. Despite many years of study, the effect of transcription on the activity of replication origins remains a controversial topic, as evidence exists for both a negative and a positive role. 
@@ -6,7 +6,9 @@ Here we show that physiological levels of transcription have a negative impact o
 
 In this work I applied metagene analyses to several published datasets in order to obtain a global view of polymerase occupancy and termination events around origins. I then used correlative techniques to explore the relationships between transcription levels and different stages of replication initiation. 
 
+\singlespacing
 \section{Global visualization of transcription around replication origins}
+\doublespacing
 
 In order to have a global view of transcription around replication origins, we decided to produce aggregate plots using published polymerase occupancy datasets \cite{schaughency:2014:genomewide} around sites of replication initiation. This powerful technique allows to visualize average transcription levels at a single nucleotide resolution across any number of genomic loci, but requires a common feature along which all loci can be aligned (e.g. an annotated feature or a sequence element, such as a TSS or a transcription factor binding site). Because of the nature of replication origins, we chose the ACS—the only sequence element absolutely required for origin activity—as our common feature. 
 
@@ -21,7 +23,9 @@ In order to have a global view of transcription around replication origins, we d
 
 The ACS is an AT-rich sequence element that is bound by the ORC complex and acts as the assembly site for the pre-replication complex. Because of its non-palindromic sequence, we could appropriately distinguish between transcription along the T-rich or A-rich versions of the ACS consensus. Additionally, the orientation of the ACS determines the location of other important sequence elements of the origin, the B elements (fig \ref{fig:originSchema}). This allowed us to not only be strand-specific with respect to the ACS, but with respect to the whole structure of the origin. 
 
+\singlespacing
 \section{Transcriptional pausing and termination are associated with replication origins}
+\doublespacing
 
 The meta-site analysis of RNAPII occupancy around replication origins is shown in fig \ref{fig:metagenes}A. The top part of the plot represents transcription along the T-rich strand of the ACS, while the bottom part represents transcription along the A-rich strand of the ACS. To obtain this plot, we used a set of origins for which the ACS was annotated \cite{nieduszynski:2006:genomewide}. Because transcription in origins is generally low, we restricted our analysis to those surrounded by convergent or tandem genes in order to have a more distinct signal. 
 
@@ -34,16 +38,15 @@ We therefore generated an aggregate plot across all origins, showing the locatio
 We detected a substantial number of termination events in the vicinity of the ACS. 
 Moreover, the asymmetry that we highlighted between the two strands with respect to polymerase occupancy is maintained in this analysis. 
 The peak of termination events in the T-rich strand resides about 20 nucleotides from the ACS, while in the A-rich strand this peak is shifted ~100 nucleotides away from the ACS. 
-These results show that RNAPII accumulates around replication origins, and this accumulation coincides with transcription termination events. 
-  
-\begin{figure}[hp]
+\begin{figure}[hp!]
 
 \centering
-\includegraphics[width=\textwidth]{figures/results/metagenes}
+\includegraphics[width=0.95\textwidth]{figures/results/metagenes}
 \caption[Metagene analyses showing polymerase occupancy and termination around replication origins]{\textbf{A: }Metagene analysis performed on a polymerase occupancy dataset \cite{schaughency:2014:genomewide}. profiles represent the average levels of transcription across origins surrounded by convergent and tandem genes. The top part of the plot represents transcription along the T-rich strand of the ACS, while the bottom part represents transcription along the A-rich strand of the acs. \textbf{B: } Plot representing the percentage of assayed origins with at least one termination event at any given position. }
 \label{fig:metagenes}
 
 \end{figure}  
+These results show that RNAPII accumulates around replication origins, and this accumulation coincides with transcription termination events. 
   
 Although we did not know which pathway was responsible for the termination events we detected around origins, we identified several hallmarks of road-block termination. Polymerase pausing is coincident with precise termination and, at least in the case of the T-rich strand, is positioned ~20 nucleotides before the binding site of a DNA binding factor. This led us to speculate that termination in the  strand is caused by a road-block dependent on ORC. 
 
@@ -62,12 +65,13 @@ Figure \ref{fig:northern}B shows species generated by transcription through the 
 Strong signal for a short transcript is detectable when the ACS is present, while in its absence, the short transcript disappears to the profit of a longer species. 
 Although we cannot formally exclude that sequence elements are playing a role in transcription termination of the short species, this results argues in favor of termination by a road-block mechanism.
 
-\section{transcription levels asymmetrically affect origin efficiency}
+\singlespacing
+\section{Transcription levels asymmetrically affect origin efficiency}
+\doublespacing
 
 Road-block is known to act as fail-safe termination to protect promoter regions and other loci from transcriptional interference \cite{colin:2014:roadblock}. 
 We reasoned that termination enacted by ORC could have a similar role by protecting the B elements, which are known to aid in pre-RC assembly \cite{wilmes:2002:b2}. 
-Because of the arrangement of ACS and B elements within origins, however, ORC would only be able to block upstream transcription before the B elements are invaded. To test this hypothesis, we therefore correlated several measures of origin efficiency with levels of transcription upstream of the ACS on both its T-rich and A-rich strands. In order to obtain these values, we calculated the average polymerase occupancy in a 100 nucleotide window upstream of the ACS. Transcription levels calculated along the T-rich strand of the ACS were dubbed ``sense", while transcription levels calculated over the A-rich strand of the ACS were dubbed ``antisense" (figure \ref{fig:senseAntisense}).
-
+Because of the arrangement of ACS and B elements within origins, however, ORC would only be able to block upstream transcription before the B elements are invaded. To test this hypothesis, we therefore correlated several measures of origin efficiency with levels of transcription upstream of the ACS on both its T-rich and A-rich strands. 
 \begin{figure}[h]
 
 \centering
@@ -76,6 +80,9 @@ Because of the arrangement of ACS and B elements within origins, however, ORC wo
 \label{fig:senseAntisense}
 
 \end{figure}  
+In order to obtain these values, we calculated the average polymerase occupancy in a 100 nucleotide window upstream of the ACS. Transcription levels calculated along the T-rich strand of the ACS were dubbed ``sense", while transcription levels calculated over the A-rich strand of the ACS were dubbed ``antisense" (figure \ref{fig:senseAntisense}).
+
+
 
 As replication occurs in discrete steps, we wanted to know if either sense or antisense transcription were affecting any particular stage of replication initiation. We therefore correlated per-origin estimates of licensing efficiency, firing efficiency, and timing of firing (niedu) with our estimates of sense and antisense transcription. Our approach was two-fold: for every measure of origin efficiency, we calculated the Pearson’s correlation between it and the levels of sense and antisense transcription. In parallel, we obtained two subpopulations of origins, according to either transcription or efficiency, and compared them using boxplots and t-tests for statistical significance.
 
@@ -86,8 +93,7 @@ Every origin we considered is associated with a value between zero and one, repr
 We split the population of origins into two sub-populations according to high and low transcription for both sense and antisense. 
 We then compared the distribution of licensing efficiencies in these two sub-populations. 
 Analysis of the overall populations showed no difference in licencing efficiency whether origins are surrounded by high or low sense or antisense transcription (fig \ref{fig:licensing}A). 
-A statistically significant anti-correlation between antisense transcription levels and licensing efficiency (pearson’s $\rho$ = -0.15 with $p$ = 0.03) could be observed, but no significant correlation between sense transcription levels and licensing efficiency (pearson’s $\rho$ = -0.04 with $p$ = 0.53). 
-We reasoned that the low levels of endogenous transcription might not be sufficient to affect highly efficient origins. We therefore considered only origins with relatively low licensing efficiency ($<$ 0.6) and repeated the experiment (fig \ref{fig:licensing}B).
+A statistically significant anti-correlation between antisense transcription levels and licensing efficiency (pearson’s $r$ = -0.15 with $p$ = 0.03) could be observed, but no significant correlation between sense transcription levels and licensing efficiency (pearson’s $r$ = -0.04 with $p$ = 0.53). 
 \begin{figure}[hp!]
 
 \centering
@@ -95,10 +101,11 @@ We reasoned that the low levels of endogenous transcription might not be suffici
 \caption[boxplots comparing licensing efficiencies in high- and low-transcription populations]{These boxplots compare the distribution of licensing efficiencies between high- and low-transcription populations.\textbf{A: }Boxplots generated using the totality of the origins available to us. high- and low-transcription populations show similar levels of efficiency both according to sense and antisense transcription. \textbf{B: } In this experiment, we restricted our boxplots to poorly licensed origins. Higher levels of antisense transcription are now significantly associated with lower efficiency, while high or low sense transcription displays no difference. }
 \label{fig:licensing}
 
-\end{figure}  
+\end{figure} 
+We reasoned that the low levels of endogenous transcription might not be sufficient to affect highly efficient origins. We therefore considered only origins with relatively low licensing efficiency ($<$ 0.6) and repeated the experiment (fig \ref{fig:licensing}B). 
 A significant difference in the distribution of licensing efficiencies could be detected between populations with high and low antisense transcription. 
 However, no such a difference could be detected when the two populations were chosen according to sense transcription. 
-These results are supported by the Pearson’s correlation coefficients: the anti-correlation between antisense transcription and licensing efficiency is higher (pearson’s $\rho$ = -0.32 with $p$ = 0.04), while that between sense transcription and licensing efficiency remains low (pearson’s $\rho$ = 0.03 with $p$ = 0.83). 
+These results are supported by the Pearson’s correlation coefficients: the anti-correlation between antisense transcription and licensing efficiency is higher (pearson’s $r$ = -0.32 with $p$ = 0.04), while that between sense transcription and licensing efficiency remains low (pearson’s $r$ = 0.03 with $p$ = 0.83). 
 Taken together, these results support the notion that physiological levels of transcription antisense to the ACS can negatively affect licensing origins, while sense transcription—regardless of its intensity—does not affect significantly licensing efficiency.
 
 
@@ -107,7 +114,6 @@ Taken together, these results support the notion that physiological levels of tr
 
 Firing is the process that allows licensed origins to activate and begin the replicative process. This step is conditional on the presence of the pre-replication complex, and therefore cannot occur unless the origin has been previously licensed. To define classes of origins with different firing efficiencies, we compared licensing and firing for every origin using published data. As for licencing, the probability of firing has been defined by a value between 0 and 1 \cite{hawkins:2013:highresolution}.
 
-A scatterplot of firing and licensing efficiencies is represented in fig \ref{fig:firing}A. We divided origins into two populations according to their position in this plot. Origins residing around the diagonal are able to fire efficiently, as licensing and firing have similar likelihoods and firing requires licensing. Origins residing below the diagonal, however, fire inefficiently, as their firing efficiency is lower than their licensing efficiency. in fig \ref{fig:firing}B we compare the distribution of antisense and sense transcription levels between these two populations. Inefficiently firing origins display higher levels of antisense transcription relative to efficiently firing origins, however, this relationship is lost when considering sense transcription. These results are supported by Pearson’s correlations: antisense transcription is anti-correlated with normalized firing efficiencies (pearson’s $\rho$ = -0.18 with $p$ = 0.01) while sense transcription and normalized firing efficiencies do not seem to be correlated at all (pearson’s $\rho$ = 0.06 with $p$ = 0.39). taken together, these results suggest that not only licensing, but also firing is affected by antisense transcription levels, while sense transcription levels have no effect on this step.
 \begin{figure}[h!]
 
 \centering
@@ -117,9 +123,20 @@ A scatterplot of firing and licensing efficiencies is represented in fig \ref{fi
 
 \end{figure} 
 
+A scatterplot of firing and licensing efficiencies is represented in fig \ref{fig:firing}A.
+We divided origins into two populations according to their position in this plot.
+Origins residing around the diagonal are able to fire efficiently, as licensing and firing have similar likelihoods and firing requires licensing. Origins residing below the diagonal, however, fire inefficiently, as their firing efficiency is lower than their licensing efficiency. 
+In fig \ref{fig:firing}B we compare the distribution of antisense and sense transcription levels between these two populations. Inefficiently firing origins display higher levels of antisense transcription relative to efficiently firing origins, however, this relationship is lost when considering sense transcription. 
+These results are supported by Pearson’s correlations: antisense transcription is anti-correlated with normalized firing efficiencies (pearson’s $r$ = -0.18 with $p$ = 0.01) while sense transcription and normalized firing efficiencies do not seem to be correlated at all (pearson’s $r$ = 0.06 with $p$ = 0.39). 
+Taken together, these results suggest that not only licensing, but also firing is affected by antisense transcription levels, while sense transcription levels have no effect on this step.
+
+
 \subsection{Timing of firing}
 
-While firing efficiency is a measure of how often a particular origin is able to initiate DNA replication, it does not give information about the elapsed time between the entry in S-phase and activation of the replisome (time of firing). We wanted to assess whether transcription levels influence the timing of origin firing. In fig \ref{fig:timing} we compare the distribution of median firing times for high and low, sense and antisense transcription. High antisense transcription is significantly associated with higher median replication times, while no difference in median replication times can be detected between high or low sense transcription levels. These results are also supported by correlations that do not rely on subpopulations: antisense transcription levels positively correlate with median replication times (pearson’s $\rho$ = 0.19 with $p$ = 0.008) while sense transcription levels show no correlation (pearson’s $\rho$ = -0.05 with $p$ = 0.42). These results suggest that even when firing occurs, antisense transcription levels can delay firing, possibly by interfering with the assembly of the replisome, while sense transcription levels have no impact.
+While firing efficiency is a measure of how often a particular origin is able to initiate DNA replication, it does not give information about the elapsed time between the entry in S-phase and activation of the replisome (time of firing). 
+We wanted to assess whether transcription levels influence the timing of origin firing. 
+In figure \ref{fig:timing} we compare the distribution of median firing times for high and low, sense and antisense transcription. 
+High antisense transcription is significantly associated with higher median replication times, while no difference in median replication times can be detected between high or low sense transcription levels. 
 \begin{figure}[h!]
 
 \centering
@@ -128,6 +145,8 @@ While firing efficiency is a measure of how often a particular origin is able to
 \label{fig:timing}
 
 \end{figure} 
+These results are also supported by correlations that do not rely on subpopulations: antisense transcription levels positively correlate with median replication times (pearson’s $r$ = 0.19 with $p$ = 0.008) while sense transcription levels show no correlation (pearson’s $r$ = -0.05 with $p$ = 0.42). These results suggest that even when firing occurs, antisense transcription levels can delay firing, possibly by interfering with the assembly of the replisome, while sense transcription levels have no impact.
+
 
 
 \section{Discussion}
@@ -138,11 +157,15 @@ We explored the possibility that ORC binding to the ACS might induce road-block 
 
 However, prompted by the asymmetry revealed by these experiments, we tested the hypothesis that transcription levels could asymmetrically impact origin efficiency depending on origin orientation. We correlated per-origin estimates of licensing efficiency, firing efficiency, and timing of firing with surrounding transcription levels both sense and antisense relative to origins oriented by the T-rich strand of the ACS. High levels of transcription on the antisense strand proved to negatively impact every measure of replication efficiency, while sense transcription had no significant effect.
 
+\singlespacing
 \subsection{Transcription termination is a feature of replication origins}
+\doublespacing
 
 Our meta-site analyses provided insights on the global state of polymerase occupancy and transcription termination around replication origins genome-wide. According to this global view, many origins are associated with distinct peaks of polymerase pausing and transcription termination on both sense and antisense strands. Because of the complexity of the DNA replication process, as well as previous evidence emerging from the literature, we speculate that these termination events protect the origin by preventing transcriptional interference. In accordance with this model, we have evidence that transcription on the sense strand of the ACS is terminated by ORC through road-block, a mechanism already known to protect promoter regions from invading polymerases. This model is supported by preliminary analyses of polymerase occupancy datasets generated in strains defective for either CPF or NNS termination. Both datasets displayed a marked increase in polymerase pausing in the vicinity of ORC, a phenotype consistent with the increased readthrough transcription that is stalled at the site of road-block. While the meta-site analyses provided many elements that suggested road-block by ORC, we could not formally prove that its presence is responsible for the termination. In our case study, ARS305, we show that termination is ACS dependent, but cannot exclude that sequence elements within the ACS could be the determinant for termination. 
 
+\singlespacing
 \subsection{ACS orientation determines the impact of transcription on replication efficiency}
+\doublespacing
 
 In order to explore the impact of endogenous transcription on DNA replication, we decided to correlate strand specific transcription levels with measures of origin efficiency. Through these analyses we showed that high levels of transcription generally correlate with poor replication performance, however, only transcription entering the origin from upstream of the A-rich strand of the ACS displays such correlations. We propose a model whereby a road-block enacted by ORC is sufficient to prevent endogenous levels of RNAPII from elongating into the B elements, thus preventing transcription from interfering with the replicative process (fig \ref{fig:model}). Transcription on the other strand, however, might be terminated less efficiently which might not be sufficient to prevent all incoming polymerases from invading the B elements and affecting one or more DNA replication steps. 
 

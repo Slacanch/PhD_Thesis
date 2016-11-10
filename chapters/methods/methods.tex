@@ -1,0 +1,61 @@
+\chapter*{\textbf{Methods}}
+
+\section*{Metagene analysis of RNAPII occupancy around origins}
+For each origin included in the analysis I identify the beginning of the ACS as the anchor point (the fixed reference around which all origins are aligned). I then extract the polymerase occupancy values corresponding to a 5kb window centered on the ACS for each of the assayed origins. each position (and its associated RNAPII occupancy value) in this window is then referenced by its relative distance to the ACS, ranging from -2500 to 2500. I calculated the median over all the values in different origins associated with the same position, and this median represents the value for that position in the final aggregate plot.
+
+To produce this plot, I used a wild type RNAPII parclip dataset \cite{schaughency:2014:genomewide}. I used a subset of 135 origins \cite{nieduszynski:2006:genomewide} that were surrounded by either convergent or tandem features \cite{xu:2009:bidirectional}. the final result was smoothed using the supsmu R function \cite{rproject} with a bandwidth of 0.01.
+
+\section*{Metagene analysis of termination events}
+
+This metagene analysis was carried out as above, with minor differences. Instead of considering the full value associated with every position, I only considered whether there was a value or not. Presence of a value was considered as a 1, while absence was considered as a 0. Additionally, instead of calculating the median over all values present at the same relative position, I summed them and then divided this number by the total number of origins considered.
+
+For this graph I used a polyadenylated 3’ end dataset \cite{wilkening:2013:efficient} and used 227 origins \cite{nieduszynski:2006:genomewide}.
+
+\section*{Per-origin estimate of sense and antisense transcription}
+
+In order to calculate the amount of average transcription incoming towards the ACS in both the T-rich strand and the A-rich strand, I considered each strand for every origin and calculated the average RNAPII occupancy signal in a 100 bp window upstream of the ACS.
+
+I used a wild type RNAPII parclip dataset for this purpose \cite{schaughency:2014:genomewide}.
+
+\section*{Statistical analysis of the effect of transcription on replication efficiency}
+
+I obtained published per-origin estimates of licensing efficiency, timing efficiency and timing of firing \cite{hawkins:2013:highresolution}. 
+We considered only origins for which 1) ACS annotation was present, 2) estimates of replication efficiency were available, and 3)  transcription levels could be calculated. 
+A total of 190 origins were used for these experiments.
+
+I use t-tests to compare the distribution and calculate p-values of different populations (boxplots). Correlations between populations were calculated with Pearson’s product moment correlation coefficient. The respective p-values were calculated with the appropriate correlation test (\texttt{cor.test()} in R).
+
+\subsection*{Licensing efficiency}
+I divided the total of 190 origins in two equally populated sets according to their sense and antisense transcription levels. I then compared the licensing efficiencies of these two populations.
+I decided to redo the experiment using only poorly licensed origins. I therefore eliminated all origins with licensing efficiency above 0.6. this left 43 origins.
+
+\subsection*{Firing efficiency}
+
+In this experiment I selected efficiently and inefficiently firing origins according to firing efficiency relative to licensing efficiency. We normalized every firing efficiency by its own licensing efficiency and defined as efficient those origins that had a resulting score higher than 0.66, inefficient if lower.
+
+\subsection*{Timing of firing}
+
+For this experiment I split the total of 190 origins into two halves according to transcription and compared the two population according to the distribution of their timing efficiencies .
+
+\section*{Algorithm for motif analysis}
+
+In order to calculate the enrichment of a specific motif in the selected pool relative to the background nucleotide distribution of the na\"{i}ve pool of sequences, we decided to employ an algorithm proposed by J. van Helden \cite{vanhelden:1998:extracting}. 
+ 
+Let $M$ be an RNA motif of length $l$. The frequency of this motif in the na\"{i}ve pool then is:
+
+\begin{equation} \label{feaf}
+F_{naive}(M)  =\dfrac{occ_{naive}(M)}{\sum_{i=1}^{S} L_i - l + 1} = \dfrac{occ_{naive}(M)}{T}
+\end{equation}
+
+Where $F_{naive}(M)$ is the frequency of M in the na\"{i}ve pool, $occ_{naive}(M)$ are the occurrences of $M$ over all na\"{i}ve sequences, $S$ is the total number of  sequences, and $L_i$ represents the length of the $i$th sequence. $T$, therefore, represents the total number of possible positions that can accomodate motif $M$ across all sequences in the pool. We will use the frequency $F_{naive}(M)$ as the probability of observing $M$ in the selected pool under the assumption that no selection has taken place.
+
+
+The probability of observing exactly $n$ occurrences of $M$ in the selected pool is estimated by the binomial formula:
+
+\begin{equation}
+P(occ_{selected}(M)=n) = \dfrac{T!}{(T-n)! \times n!} \times (F_{naive}(M))^n \times (1-F_{naive}(M))^{(T-n)}
+\end{equation}
+
+Consequently, the probability to observe n or more occurrences of motif $M$
+
+
