@@ -1,7 +1,7 @@
 \chapter*{\textbf{Methods}}
 
 \section*{Metagene analysis of RNAPII occupancy around origins}
-For each origin included in the analysis I identify the beginning of the ACS as the anchor point (the fixed reference around which all origins are aligned). I then extract the polymerase occupancy values corresponding to a 5kb window centered on the ACS for each of the assayed origins. each position (and its associated RNAPII occupancy value) in this window is then referenced by its relative distance to the ACS, ranging from -2500 to 2500. I calculated the median over all the values in different origins associated with the same position, and this median represents the value for that position in the final aggregate plot.
+For each origin included in the analysis I identify the beginning of the ACS as the anchor point (the fixed reference around which all origins are aligned). I then extract the polymerase occupancy values corresponding to a 5kb window centered on the ACS for each of the assayed origins. each position (and its associated RNAPII occupancy value) in this window is then referenced by its relative distance to the ACS, ranging from -2500 to 2500. I calculated the median over all the values associated with the same relative position, and this median represents the value for that position in the final aggregate plot.
 
 To produce this plot, I used a wild type RNAPII parclip dataset \cite{schaughency:2014:genomewide}. I used a subset of 135 origins \cite{nieduszynski:2006:genomewide} that were surrounded by either convergent or tandem features \cite{xu:2009:bidirectional}. the final result was smoothed using the supsmu R function \cite{rproject} with a bandwidth of 0.01.
 
@@ -44,18 +44,64 @@ In order to calculate the enrichment of a specific motif in the selected pool re
 Let $M$ be an RNA motif of length $l$. The frequency of this motif in the na\"{i}ve pool then is:
 
 \begin{equation} \label{feaf}
-F_{naive}(M)  =\dfrac{occ_{naive}(M)}{\sum_{i=1}^{S} L_i - l + 1} = \dfrac{occ_{naive}(M)}{T}
+F_{naive}(M)  =\dfrac{occ(M)}{\sum_{i=1}^{S} L_i - l + 1} = \dfrac{occ(M)}{T}
 \end{equation}
 
-Where $F_{naive}(M)$ is the frequency of M in the na\"{i}ve pool, $occ_{naive}(M)$ are the occurrences of $M$ over all na\"{i}ve sequences, $S$ is the total number of  sequences, and $L_i$ represents the length of the $i$th sequence. $T$, therefore, represents the total number of possible positions that can accomodate motif $M$ across all sequences in the pool. We will use the frequency $F_{naive}(M)$ as the probability of observing $M$ in the selected pool under the assumption that no selection has taken place.
+Where $F_{naive}(M)$ is the frequency of M in the na\"{i}ve pool, $occ_(M)$ are the occurrences of $M$ over all na\"{i}ve sequences, $S$ is the total number of  sequences, and $L_i$ represents the length of the $i$th sequence. $T$, therefore, represents the total number of possible positions that can accomodate motif $M$ across all sequences in the pool. We will use the frequency $F_{naive}(M)$ as the probability of observing $M$ in the selected pool under the assumption that no selection has taken place.
 
 
 The probability of observing exactly $n$ occurrences of $M$ in the selected pool is estimated by the binomial formula:
 
 \begin{equation}
-P(occ_{selected}(M)=n) = \dfrac{T!}{(T-n)! \times n!} \times (F_{naive}(M))^n \times (1-F_{naive}(M))^{(T-n)}
+P(occ(M)=n) = \dfrac{T!}{(T-n)! \times n!} \times (F_{naive}(M))^n \times (1-F_{naive}(M))^{(T-n)}
 \end{equation}
 
-Consequently, the probability to observe n or more occurrences of motif $M$
+Consequently, the probability to observe $n$ or more occurrences of motif $M$ within the selected pool is:
+
+\begin{equation} \label{pval}
+\begin{split}
+P(occ(M) >= n) & = \sum_{j=n}^{T}P(occ(M) = j)\\
+& = 1-\sum_{j=0}^{n-1}P(occ(M) = j)
+\end{split}
+\end{equation}
+
+Substituting the number of detected occurrences of $M$ in the selected pool  within \ref{pval} results in the probability of that number of occurrences emerging by chance given the nucleotide bias of the naive pool. 
 
 
+
+On this basis, we can define a significance coefficient:
+
+\begin{equation}
+Sig = -Log_{10}[P(occ(M) >= n)]
+\end{equation}
+
+This coefficient was used to assess the enrichment of Nrd1 and Nab3 sites with spacers of different length.
+
+\singlespacing
+\section*{Comparison of motifs between SELEX and artificial CUT selection}
+\doublespacing
+
+Both the SELEX experiment and the artificial CUT selection follow the same selection principle. A pool of random sequences is subjected to cycles of selection according to variable criteria. The final pool can then be compared to the starting pool of sequences in order to determine enrichment or depletion of specific motifs. 
+
+To compare enrichment for all motifs in the two experiments, i analyzed their starting and the final pool with Rsat \cite{medinarivera:2015:rsat}. I then plotted the z-scores for each motif in figure \ref{fig:selexComp}.
+In order to determine significantly enriched motifs, i calculated p-values based on z-scores using the R environment:
+
+\begin{verbatim}
+pvalue = 2 * pnorm(-abs(zscore))
+\end{verbatim}
+
+I then corrected the p-values for multiple hypothesis testing using the Benjamini-Hochberg correction \cite{hochberg:1990:more}. After the correction, only motifs with a p-value lower than 0.001 were considered enriched or depleted.
+
+\section*{Analysis of nucleotides flanking GUAG and GUAA}
+
+In this experiment i wanted to assess the over- or under-representation of specific nucleotides flanking GUAG or GUAA in two datasets: the final pool of the SELEX experiment, and a pool of CUT sequences extracted from the genome. 
+
+In order to accomplish this, i compared the frequency of specific nucleotides surrounding GUAG and GUAA with the overall frequency of these nucleotides within the pool. 
+The Log$_2$ of these ratios is represented in figure \ref{fig:flanking}. 
+In order to calculate the statistical significance of the enrichment/depletion, i calculated p-values based on the binomial distribution (binomial test).
+
+\subsection*{Correlating the results obtained in the two datasets}
+
+Because of the environment, the amount of selective pressure, and the higher number of sequences, enrichment scores for Nrd1 and Nab3 binding motifs are much higher in the SELEX experiment than in the artificial CUT selection. This constitute a problem when trying to apply classical clustering approaches in order to determine the similarity of flanking nucleotide enrichment patterns. These techniques rely on eucledian distance between patterns to determine similarity, which is heavily biased by the substantial difference in enrichment values.
+
+I wanted to show that despite overall differences in the magnitude of enrichment scores, the patterns of flanking nucleotides enrichment and depletion hold well even across different datasets. I therefore decided to use Pearson's correlation as a measure of similarity. This ensures that scale is a non-factor in the assessment of overall similarity between the patterns.

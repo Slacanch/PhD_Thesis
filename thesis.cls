@@ -297,9 +297,9 @@
     \vfill  
     \Large{par}
     \vfill
-    \LARGE{\textbf{\textsc{\PhDname}}} %% Nom du docteur
+    \LARGE{\textbf{\PhDname}} %% Nom du docteur
     \vfill
-    \Large{\PhDTitleEN} %% Titre de la thèse
+    \Large{\textsc{\PhDTitleEN}} %% Titre de la thèse
     \vfill
     \bigskip
 \end{center}
@@ -429,9 +429,9 @@ Composition du Jury :
 	\noindent
 	\input{frontmatter/thanks}
 	\vspace*{\fill} 
-	\newpage
+	%\newpage
 	%\thispagestyle{empty}
-	\mbox{}
+	%\mbox{}
 	\clearpage
 }
 
