@@ -1,23 +1,29 @@
 \chapter*{\textbf{Methods}}
 
-\section*{Metagene analysis of RNAPII occupancy around origins}
-For each origin included in the analysis I identify the beginning of the ACS as the anchor point (the fixed reference around which all origins are aligned). I then extract the polymerase occupancy values corresponding to a 5kb window centered on the ACS for each of the assayed origins. each position (and its associated RNAPII occupancy value) in this window is then referenced by its relative distance to the ACS, ranging from -2500 to 2500. I calculated the median over all the values associated with the same relative position, and this median represents the value for that position in the final aggregate plot.
+\singlespacing
+\section*{Metagene Analysis of RNAPII Occupancy Around Origins}
+\doublespacing
+
+For each origin included in the analysis I identify the beginning of the ACS as the anchor point (the fixed reference around which all origins are aligned). 
+I then extract the polymerase occupancy values corresponding to a 5kb window centered on the ACS for each of the assayed origins. 
+Each position (and its associated RNAPII occupancy value) in this window is then referenced by its relative distance to the ACS, ranging from -2500 to 2500. 
+I calculated the median over all the values associated with the same relative position, and this median represents the value for that position in the final aggregate plot.
 
 To produce this plot, I used a wild type RNAPII parclip dataset \cite{schaughency:2014:genomewide}. I used a subset of 135 origins \cite{nieduszynski:2006:genomewide} that were surrounded by either convergent or tandem features \cite{xu:2009:bidirectional}. the final result was smoothed using the supsmu R function \cite{rproject} with a bandwidth of 0.01.
 
-\section*{Metagene analysis of termination events}
+\section*{Metagene Analysis of Termination Events}
 
 This metagene analysis was carried out as above, with minor differences. Instead of considering the full value associated with every position, I only considered whether there was a value or not. Presence of a value was considered as a 1, while absence was considered as a 0. Additionally, instead of calculating the median over all values present at the same relative position, I summed them and then divided this number by the total number of origins considered.
 
 For this graph I used a polyadenylated 3’ end dataset \cite{wilkening:2013:efficient} and used 227 origins \cite{nieduszynski:2006:genomewide}.
 
-\section*{Per-origin estimate of sense and antisense transcription}
+\section*{Per-Origin Estimate of Sense and Antisense Transcription}
 
 In order to calculate the amount of average transcription incoming towards the ACS in both the T-rich strand and the A-rich strand, I considered each strand for every origin and calculated the average RNAPII occupancy signal in a 100 bp window upstream of the ACS.
 
 I used a wild type RNAPII parclip dataset for this purpose \cite{schaughency:2014:genomewide}.
 
-\section*{Statistical analysis of the effect of transcription on replication efficiency}
+\section*{Statistical Analysis of the Effect of Transcription on Replication Efficiency}
 
 I obtained published per-origin estimates of licensing efficiency, timing efficiency and timing of firing \cite{hawkins:2013:highresolution}. 
 We considered only origins for which 1) ACS annotation was present, 2) estimates of replication efficiency were available, and 3)  transcription levels could be calculated. 
@@ -25,19 +31,33 @@ A total of 190 origins were used for these experiments.
 
 I use t-tests to compare the distribution and calculate p-values of different populations (boxplots). Correlations between populations were calculated with Pearson’s product moment correlation coefficient. The respective p-values were calculated with the appropriate correlation test (\texttt{cor.test()} in R).
 
-\subsection*{Licensing efficiency}
+\subsection*{Licensing Efficiency}
 I divided the total of 190 origins in two equally populated sets according to their sense and antisense transcription levels. I then compared the licensing efficiencies of these two populations.
 I decided to redo the experiment using only poorly licensed origins. I therefore eliminated all origins with licensing efficiency above 0.6. this left 43 origins.
 
-\subsection*{Firing efficiency}
+\subsection*{Firing Efficiency}
 
 In this experiment I selected efficiently and inefficiently firing origins according to firing efficiency relative to licensing efficiency. We normalized every firing efficiency by its own licensing efficiency and defined as efficient those origins that had a resulting score higher than 0.66, inefficient if lower.
 
-\subsection*{Timing of firing}
+\subsection*{Timing of Firing}
 
 For this experiment I split the total of 190 origins into two halves according to transcription and compared the two population according to the distribution of their timing efficiencies .
 
-\section*{Algorithm for motif analysis}
+\section*{SELEX and Artificial CUT Selection}
+
+\paragraph{SELEX}
+The SELEX experiment was performed in the lab by Jean-Baptiste Briand.
+The 2000 most represented unique sequences of the final selected pool were kept for further analysis.
+200,000 sequences were kept from the na\"{i}ve pool in order to calculate background distributions.
+
+\paragraph{Artificial CUT Selection}
+Artificial CUT selection data was performed by Odil Porrua in the lab \cite{porrua:2012:in}.
+a total of 1000 sequences from the sequencing of the final selected pool was kept for analysis.
+200,000 sequences were kept from the na\"{i}ve pool in order to calculate background distributions.
+
+
+
+\section*{Algorithm for Motif Analysis}
 
 In order to calculate the enrichment of a specific motif in the selected pool relative to the background nucleotide distribution of the na\"{i}ve pool of sequences, we decided to employ an algorithm proposed by J. van Helden \cite{vanhelden:1998:extracting}. 
  
@@ -78,7 +98,7 @@ Sig = -Log_{10}[P(occ(M) >= n)]
 This coefficient was used to assess the enrichment of Nrd1 and Nab3 sites with spacers of different length.
 
 \singlespacing
-\section*{Comparison of motifs between SELEX and artificial CUT selection}
+\section*{Comparison of Motifs Between SELEX and Artificial CUT Selection}
 \doublespacing
 
 Both the SELEX experiment and the artificial CUT selection follow the same selection principle. A pool of random sequences is subjected to cycles of selection according to variable criteria. The final pool can then be compared to the starting pool of sequences in order to determine enrichment or depletion of specific motifs. 
@@ -92,7 +112,7 @@ pvalue = 2 * pnorm(-abs(zscore))
 
 I then corrected the p-values for multiple hypothesis testing using the Benjamini-Hochberg correction \cite{hochberg:1990:more}. After the correction, only motifs with a p-value lower than 0.001 were considered enriched or depleted.
 
-\section*{Analysis of nucleotides flanking GUAG and GUAA}
+\section*{Analysis of Nucleotides Flanking GUAG and GUAA}
 
 In this experiment i wanted to assess the over- or under-representation of specific nucleotides flanking GUAG or GUAA in two datasets: the final pool of the SELEX experiment, and a pool of CUT sequences extracted from the genome. 
 
@@ -100,7 +120,7 @@ In order to accomplish this, i compared the frequency of specific nucleotides su
 The Log$_2$ of these ratios is represented in figure \ref{fig:flanking}. 
 In order to calculate the statistical significance of the enrichment/depletion, i calculated p-values based on the binomial distribution (binomial test).
 
-\subsection*{Correlating the results obtained in the two datasets}
+\subsection*{Correlating the Results Obtained in the Two Datasets}
 
 Because of the environment, the amount of selective pressure, and the higher number of sequences, enrichment scores for Nrd1 and Nab3 binding motifs are much higher in the SELEX experiment than in the artificial CUT selection. This constitute a problem when trying to apply classical clustering approaches in order to determine the similarity of flanking nucleotide enrichment patterns. These techniques rely on eucledian distance between patterns to determine similarity, which is heavily biased by the substantial difference in enrichment values.
 
