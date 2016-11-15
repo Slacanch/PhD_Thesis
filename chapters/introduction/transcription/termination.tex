@@ -34,8 +34,9 @@ This complexity makes \gls{cpf} the most reliable, efficient, and precise termin
 
 
 
-\subsection{Recruitment and assembly}
-%TODO{figure}
+\subsection{Recruitment and Assembly}
+
+
 Recruitment and initial assembly of the \gls{cpf} complex onto the nascent RNA is promoted by two mechanisms: interaction with specific sequences elements, and interaction with the polymerase \gls{ctd}.
 
 A key component of the \gls{cpf} complex, Pcf11, contains a peptide sequence able to recognize the \gls{ctd}. This \gls{cid} is able to specifically recognize the \sert{}-phosphorylated version of the heptapeptide.
@@ -113,8 +114,9 @@ The proof of principle that termination is possible without cleavage has been re
 
 \section{The NNS Pathway}
 
+\glsreset{sns}
 NNS dependent transcription termination is the second of the main termination mechanisms in \cer{}. 
-It is involved in the termination of small Nuclear RNAs (snRNAs), small Nucleolar RNAs (snoRNAs) and a number of other non-functional non-coding RNAs.
+It is involved in the termination of \gls{sns}, \gls{snos} and a number of other non-functional non-coding RNAs.
 It sets itself apart from CPF-CF termination in a number of ways.
 First and foremost, it relies on a completely different---and much smaller---set of proteins: the two RNA binding proteins Nrd1 and Nab3 \cite{conrad:2000:yeast}, together with the helicase Sen1. 
 Because of the different molecular effectors, the termination mechanism---although still not fully elucidated---is appreciably different. 
@@ -135,7 +137,7 @@ The main molecular effectors of the NNS complex are the three protein Nab3, Nrd1
 \paragraph{Nab3}
 
 This factor was originally identified as a polyadenylated RNA binding protein. 
-Nab3 contains several structural domains: a conserved RNA Recognition Motif (RRM) that can contact specific sequence elements on the nascent RNA, a region necessary for the interaction with Nrd1, and an essential Glutammine/Proline region at the C-terminus.
+Nab3 contains several structural domains: a conserved \gls{rrm} that can contact specific sequence elements on the nascent RNA, a region necessary for the interaction with Nrd1, and an essential Glutammine/Proline region at the C-terminus.
 
 Biochemical experiments have shown that Nab3 forms a stable heterodimer with Nrd1 and contacts the RNA as such \cite{conrad:2000:yeast}. 
 In addition, the structure of the RRM has been solved, revealing the structural basis for the preference of the sequence UCUUG \cite{lunde:2011:structural}. 
@@ -175,10 +177,10 @@ As in the case of CPF-CF, the NNS complex is recruited to the region of terminat
 Within the NNS complex, Nrd1 and Nab3 are the major interactors of these elements, providing specificity and ensuring that Sen1---believed to be the molecular effector of NNS termination---is recruited only in the appropriate circumstances \cite{porrua:2013:bacteriallike}.
 
 The CTD of RNAPII is contacted by the CID domain of Nrd1. 
-This domain preferentially recognizes the Ser5-phosphorylated variant, which is the prevalent CTD phosphorylation state in the first 500-600 nucleotides of transcription. 
+This domain preferentially recognizes the \serf{}-phosphorylated variant, which is the prevalent CTD phosphorylation state in the first 500-600 nucleotides of transcription. 
 This preference confers to the NNS complex a high degree of specificity for terminating transcription in the early stages of elongation. 
 According to the current model for NNS termination, the interaction with the CTD occurs prior to RNA binding, and facilitates recognition of sequence elements on the nascent transcript.  
-Presence of Ser5-P CTD was shown to be a pre-requisite for efficient termination, as placing high efficiency NNS binding sites at the end of long transcription units---where the levels of Ser5-P would be completely supplanted by Ser2-P---does not result in termination \cite{gudipati:2008:phosphorylation}.
+Presence of \serf{}-P CTD was shown to be a pre-requisite for efficient termination, as placing high efficiency NNS binding sites at the end of long transcription units---where the levels of \serf{}-P would be completely supplanted by \sert{}-P---does not result in termination \cite{gudipati:2008:phosphorylation}.
 
 \begin{figure}[ht]
 
@@ -189,11 +191,12 @@ Presence of Ser5-P CTD was shown to be a pre-requisite for efficient termination
 
 \end{figure}
 
+\glsreset{selex}
 Recruitment of Nrd1 to the CTD, however necessary, is not sufficient to trigger termination. 
 The Nrd1-Nab3 heterodimer must also contact the nascent RNA through the RRM domains of the two subunits.
 Original studies have investigated the sequence elements that drive NNS termination, pinpointing two core consensuses: UCUU as the main binding site for Nab3, and GUA[A/G] as the main site for Nrd1 \cite{carroll:2004:identification}. 
 More recent investigations redefined these consensuses and identified new sequence elements that can increase termination efficiency when in proximity of canonical binding sites. 
-Use of an \invivo{} SELEX (Systematic Evolution of Ligands by Exponential enrichment) strategy allowed to extend the core consensus sequences for both Nrd1 and Nab3 with nucleotides that proved critical for binding \cite{porrua:2012:in}. 
+Use of an \invivo{} \gls{selex} (\glsdesc{selex}) strategy allowed to extend the core consensus sequences for both Nrd1 and Nab3 with nucleotides that proved critical for binding \cite{porrua:2012:in}. 
 In addition, AU-rich sequences found downstream of Nrd1 sites were shown to play a role in increasing both termination efficiency and recruitment of Nrd1 \cite{porrua:2012:in}. Similar conclusions have been reached by \invivo{} crosslinking studies \cite{wlotzka:2011:nuclear}.
 
 Despite the efforts expended in identifying sequence elements that could univocally lead to NNS termination, a lot of ambiguity remains on what constitutes an NNS terminator \invivo{}. 
@@ -217,7 +220,7 @@ Taken together, these results support a model where, akin to the bacterial termi
 The process of NNS termination is strictly connected with 3' end processing or degradation mediated by the nuclear exosome, a multiprotein complex endowed with exonuclease activity \cite{vasiljeva:2006:nrd1}. 
 The exosome plays a major role in nuclear RNA quality control, degrading aberrant transcripts, a number of non-functional non-coding RNAs, and trimming the precursors of functional small non-coding RNAs such as sn/snoRNA \cite[for review see][]{kilchert:2016:regulation}. 
 The exosome is composed of six non-catalytic subunits arranged in a ring-like structure, together with three cap subunits that can bind RNA. 
-The catalytic activity of this complex is dependent on two active 3' to 5' exonuclease, Dis3 and Rrp6. 
+The catalytic activity of this complex is dependent on two active \TtoF{} exonuclease, Dis3 and Rrp6. 
 Dis3 associates with the ring on the opposite side of the three cap subunits, and degrades RNAs that are threaded through the cap proteins and into the ring \cite{makino:2015:rna}. 
 The exosome is present throughout the nucleus and in the cytoplasm. 
 However, only the nuclear version can associate with the other exonuclease, Rrp6, whose activity is known to regulate the levels of many NNS targets.
@@ -227,8 +230,8 @@ TRAMP (for Trf4/Air2/Mtr4p Polyadenylation) is a nuclear complex composed of the
 Trf4 is the core subunit of the complex, to which both Air2 and Mtr4 bind independently. 
 It possesses poly(A) polymerase activity, but unlike Pap1---the canonical poly(A) polymerase associated with the CPF-CF complex---it can only add tails in a distributive manner. 
 Trf4 is also the factor responsible for the coordination between the NNS complex and the nuclear exosome. 
-A recent study showed that Trf4 contacts Nrd1 through a small motif called Nrd1 Interaction Motif (NIM) . 
-The NIM on Trf4 mimics Ser5-P CTD and can therefore compete with the CTD of RNAPII for the interaction with the CID (CTD interaction domain) on Nrd1. 
+A recent study showed that Trf4 contacts Nrd1 through a small motif called \gls{nim}. 
+The NIM on Trf4 mimics \serf{}-P CTD and can therefore compete with the CTD of RNAPII for the interaction with the CID (CTD interaction domain) on Nrd1. 
 The interaction of Nrd1’s CID with the CTD and Trf4 are mutually exclusive. 
 These findings have suggested a model whereby TRAMP is recruited to the RNA when the CID of Nrd1 is freed from the CTD of the polymerase \cite{tudek:2014:molecular}, allowing the coordination of events going from termination to the handover of the transcript to TRAMP and the exosome.
 
