@@ -1,5 +1,95 @@
 \chapter*{\textbf{Methods}}
 
+
+
+\section*{Cell growth and UV Cross-Linking}
+
+For all datasets, 2L of yeast cells expressing Rpb1-HTP tag were grown at 30°C to OD600=0.6 in DO-Trp (drop out without tryptophan). For Anchor Away strains, rapamycin was added at OD600=0.4 for two hours to a final concentration of 1µg/ml. For rna15 experiment, cells were grown at 25°C to OD600=0.6. 1 volume of media preheated at 30 or 37°C was added and cultures were incubated at 30 or 37°C for 1 hour and half. Cells were submitted to UV crosslink in a UV lamp system (Megatron) for 50 seconds. Cells were harvested by centrifugation, washed in cold PBS and resuspended in 2.4 volume / g of cells of TN150 buffer (50 mM Tris pH 7.8, 150 mM NaCl, 0.1\% NP-40 and 5 mM beta mercaptoethanol) supplemented with protease inhibitors (cOmplete™, Mini, EDTA-free Protease Inhibitor Cocktail). This suspension was flash frozen in droplets and cells were mechanically broken using the Mixer Mill MM 400 by doing 5 cycles of 3 minutes at 20 Hrz. Resulting powder was kept at -80°C. 
+
+\section*{RNA-Protein Complexes Purification}
+
+Powders were defrozen and the resulting extracts were treated for one hour at 25°C with DNase I (165U/g of cells) to solubilize the chromatin and then clarified by centrifugating 20’ at 20000g at 4°C. 
+IgG and nickel purification steps were performed as previously described in the original protocol \cite{granneman:2009:identification} with minor changes: i) IgG purification steps has been realized using M-280 tosylactivated dynabeads (15mg per samples) coupled with rabbit IgG. ii) To increase the stringency, washes following both IgG and nickel purification steps were done at high salt concentration (1 M NaCl). 
+After over-night binding on nickel columns, sequencing adaptors were added on the RNA as described in the original procedure. Because we work on nascent transcripts, some changes were required to fit with our purpose: For instance, since nascent transcripts contain a 3’ hydroxyl group that is protected inside the polymerase, we decided not to do the dephosphorylation step usually required because of the RNAse treatement that leads to 3’ phosphate transcripts. Also, we modified both 5’ and 3’ adaptors  in order to sequence RNA molecules from the 3’ end so that we can determine the exact position of the polymerase. The 3’ ligation has been realized with T4 rnl 2 truncated K227Q enzyme (NEB) instead of classical T4 RNA ligase. 
+RNA-protein complexes were eluted in 400 µl of elution buffer (50mM Tris pH 7.8, 50mM NaCl, 150mM Imidazole, 0.1\% NP-40, 5mM beta mercaptoethanol). Eluates were concentrated in Vivacon® ultrafiltration spin columns 30 KDa MWCO to a final volume of 120 µl. A protein fractionation step was performed using the Gel Elution Liquid Fraction Entrapment Electrophoresis (Gelfree) system from Expedeon. RNA pol II containing fractions were treated with 100 µg of proteinase K in a buffer containing 0.5\% SDS. RNA was purified by two phenol chloroform isoamyl and one chloroform steps and precipitated in ethanol. RNA were reverse transcribed using the Reverse transcriptase IV (Invitrogen)
+
+
+\section*{Library Preparation}
+
+Between half to ¾ of the cDNA solution was used to performed multiple PCR reactions in a final volume of 25 µl using the following conditions: 0.4 µM of ech primers 0.2 mM dNTP, 2.5 U LA Taq DNA polymerase from Takara, 1X LA PCR Buffer II and 2 µl of cDNA per reaction with the programme: 95°C 2’, 95°C 30’’, 58°C 45’’, 72°C 1’, 72°C 5’. 
+PCR were pooled and treated with 200 U of Exonuclease I (NEB) per milliliter of PCR reaction for 1 hour at 37°C. After Exonuclease I inactivation for 20’ at 80°C, DNA was purified on PCR clean up columns (NucleoSpin® Gel and PCR Clean-up, Macherey-Nagel) and sent to sequence using Illumina technology (NextSeq sequencing). 
+
+\singlespacing
+\section*{Dataset Processing}
+\subsection*{CRAC}
+\doublespacing
+
+Samples were demultiplexed using the pyBarcodeFilter script from the pyCRAC utility suite \cite{webb:2014:parclip}. 
+Subsequently, the 3’ adaptor is clipped with Cutadapt \cite{martin:2011:cutadapt} (-a TGGAATTCTCGGGTGCCAAGGATCTCGTATGCCGTCTTCTGCTTG –m 10) and the resulting insert is quality trimmed from the 3’ end using Trimmomatic rolling mean clipping \cite{bolger:2014:trimmomatic} (window size = 5, minimum quality = 25). 
+At this stage the pyCRAC script pyFastqDuplicateRemover is used to collapse PCR duplicates and ensure each insert is represented only once. 
+Each unique insert in our library is associated with a 6  nucleotides random tag within the 5’ adaptor. 
+During Demultiplexing, pyBarcodeFilter retains this information in the header of each sequence. 
+This information is used at this stage to better discern between identical inserts and PCR duplicates of the same insert. 
+The resulting sequences are reverse complemented with Fastx\_reverse\_complement (part of the fastx toolkit, \url{http://hannonlab.cshl.edu/fastx_toolkit/}) and mapped to the R64 genome \cite{cherry:2012:saccharomyces} with bowtie2 (-N 1 –f) \cite{langmead:2012:fast}.
+
+\subsection*{RNA-seq}
+
+Samples are quality trimmed with trimmomatic (see above) and mapped to the R64 genome with bowtie2 with default options.
+
+\section*{Metagene Analyses}
+
+For each site included in the analysis we extracted the polymerase occupancy values corresponding to a 5kb window centered on the site. Each position (and its associated RNAPII occupancy value) in this window is then referenced by its relative distance to the ACS, ranging from -2500 to 2500. I calculated the median over all the values associated with the same relative position, and this median represents the value for that position in the final aggregate plot.
+
+In certain cases, the median could not be used because of issues of depth. In this case we used the mean to summarize the data. When using the mean we eliminated extreme outliers to limit noise. For each relative position, we excluded from the analysis every value that was above the mean + 5 standard deviations calculated over all the values at that position.
+
+\singlespacing
+
+
+\begin{sidewaystable}
+
+
+\resizebox{\textwidth}{!}{
+\begin{tabular}[hp!]{ccccp{12cm}}%  
+\hline 
+Figure & N sites & Sites Origin & Dataset Origin & Notes \\ 
+\hline 
+\ref{fig:four}A & 272 & \cite{kubik:2015:nucleosome} & This Study & Only sites with a gene within 300bp downstream of the site were used \\ 
+\hline 
+\ref{fig:four}B & 294 & \cite{zentner:2015:checseq} & This study & we selected the top 500 sites of the "fast" category and analyzed in both orientation. only sites that had an annotated transcript within 300 bp upstream of the site were used. \\ 
+\hline 
+\ref{fig:four}C & 117 & \cite{zentner:2015:checseq} & This study & Only sites with a gene within 300 bp upstream of the site were analyzed \\ 
+\hline 
+\ref{fig:four}D & 161 & \cite{kubik:2015:nucleosome} & This study & Only sites with a gene within 300 bp upstream of the site were analyzed \\ 
+\hline 
+\ref{fig:five} & 161 & \cite{pelechano:2013:extensive}  & This Study & I considered the P(A) site of a gene the position with the highest TIF-seq signal within the first 500 bp downstream of the stop codon of that gene. P(A) sites with a Rap1 site within 300 bp downstream (rap1 sites defined according to \cite{kubik:2015:nucleosome}) were considered for this analysis.	
+ \\ 
+\hline 
+\ref{fig:nine} & variable & \cite{macisaac:2006:improved} & \cite{schaughency:2014:genomewide} & sites for multiple DNA binding factors were considered. Metagene analyses were performed (see above) on all factors using WT data. \\ 
+\hline 
+\ref{fig:ten} & 16 & centromere annotation & \cite{schaughency:2014:genomewide} & NA	 \\ 
+\hline 
+\ref{fig:eleven} & 259 & tRNA annotation & \cite{schaughency:2014:genomewide} & NA \\ 
+\hline 
+\ref{fig:S6} & 117 & \cite{zentner:2015:checseq} & \cite{schaughency:2014:genomewide} & NA \\ 
+\hline 
+\ref{fig:S7} & 30 & \cite{zentner:2015:checseq} & This Study & we selected the top 500 sites of the "fast" category and analyzed in both orientation. only sites that had an annotated transcript within 300 bp upstream of the site were used.  \\ 
+\hline 
+\ref{fig:S9}Top & 12 & \cite{kubik:2015:nucleosome} & \cite{schaughency:2014:genomewide} & We considered sites with CUTs within 300 nucleotodes upstream and with a minimum average coverage of 5 in a 100 bp window upstream of the site.  \\ 
+\hline 
+\ref{fig:S9}Bottom & 152 & \cite{zentner:2015:checseq} & \cite{schaughency:2014:genomewide} & We considered sites with NNS and antisense transcripts within 300bp upstream of the Reb1 site \\ 
+\hline 
+
+\end{tabular}}
+  \caption{Table of metagene analyses. N sites represents the number of sites used in the analysis. "Sites Origin" lists the origin of the sites used for the analysis. Dataset Origin lists the origins of the datasets used, "This study" is used when the datasets were generated in the lab. "Notes" adds details on the selection of the sites or usage of the datasets when needed.}
+  \label{tab:test}
+\end{sidewaystable}
+\doublespacing
+
+\section*{Boxplots in fig \ref{fig:five}C}
+
+In order to represent the loss of polymerases due to termination, I calculated the average polymerase occupancy 100 nucleotide across the poly(A) site of all genes upstream of rap1 sites. This value was then divided by the average polymerase occupancy signal across the whole body of the gene. The overall distribution of these values for several datasets was compared with boxplots ant t-tests.
+
+
 \singlespacing
 \section*{Metagene Analysis of RNAPII Occupancy Around Origins}
 \doublespacing

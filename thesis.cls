@@ -24,6 +24,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
 \doublespacing
+\RequirePackage{rotating}
 \RequirePackage{parskip}
 \RequirePackage{fancyvrb}
 \RequirePackage{microtype}
@@ -56,7 +57,9 @@
 
 
 
-
+%sup figures
+\RequirePackage{newfloat}
+\DeclareFloatingEnvironment[name={Supplementary Figure}]{suppfigure}
 
 
 
@@ -215,7 +218,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\frontmatter}{
 	\maketitle
-	\copyrightpage
+	%\copyrightpage
 	\abstractpage
 	\addcontentsline{toc}{chapter}{Table of Contents}
 	\tableofcontents
@@ -229,9 +232,9 @@
 	\addcontentsline{toc}{chapter}{Preface}
 	\preface
 	\clearpage
-	\addcontentsline{toc}{chapter}{Acknowledgments}
-	\acknowledgments
-	\clearpage
+	%\addcontentsline{toc}{chapter}{Acknowledgments}
+	%\acknowledgments
+	%\clearpage
 	\dedicationpage
 
 	\setcounter{page}{1}
@@ -369,7 +372,7 @@ Composition du Jury :
 	\singlespace
 	\newpage
 	\pagenumbering{roman}
-	\setcounter{page}{4}
+	\setcounter{page}{3}
 	\pagestyle{fancy}
 	\renewcommand{\headrulewidth}{0.0pt}
 	\vspace*{35pt}
@@ -378,7 +381,7 @@ Composition du Jury :
 	\vspace*{35pt}
 	\scshape Abstract \\ \rm
 	\end{center}
-	\input{frontmatter/abstractEN}
+	\small \input{frontmatter/abstractEN}
 	%
 	\vspace{15pt}	
 	\begin{center}
@@ -386,7 +389,7 @@ Composition du Jury :
 	\vspace*{20pt}
 	\scshape R\'{e}sum\'{e} \\ \rm
 	\end{center}
-	\input{frontmatter/abstractFR}
+	\small \input{frontmatter/abstractFR}
 	%
 	\vspace*{\fill}
 	\newpage \lhead{} \rhead{}
@@ -503,5 +506,8 @@ Route de l'Orme aux Merisiers RD 128 / 91190 Saint-Aubin, France}}
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{acm}
 \bibliography{references,fixed_references}
+\newpage
+\thispagestyle{empty}
+\mbox{}
 \backpage
 }
