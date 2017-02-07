@@ -161,13 +161,13 @@
  
  \label{Personnal}
 \newcommand{\PhDname}{Tito Candelli} % Civility, first name and name 
-\newcommand{\NNT}{201XX} %% Your NNT numer (the Library will attribute one...)
+\newcommand{\NNT}{2016SACLS587} %% Your NNT numer (the Library will attribute one...)
 \newcommand{\ecodocnum}{577} % Accrediation number
-\newcommand{\ecodoctitle}{Structure et dynamique des syst\`{e}me vivants} % Full name of the doctorale school
-\newcommand{\PhDspeciality}{Bioinformatique} % Speciality 
-\newcommand{\PhDworkingplace}{Universit\'{e} Paris-Sud} %PhD working place (must be one of these : 
-\newcommand{\defenseplace}{"Institut Jacques Monod"} %Place of defense
-\newcommand{\defensedate}{12 December 2016} % Date of defense
+\newcommand{\ecodoctitle}{Structure et dynamique des syst\`{e}mes vivants} % Full name of the doctorale school
+\newcommand{\PhDspeciality}{Sciences de la Vie et Sant\'{e}} % Speciality 
+\newcommand{\PhDworkingplace}{l'Institut Jacques Monod} %PhD working place (must be one of these : 
+\newcommand{\defenseplace}{Institut Jacques Monod} %Place of defense
+\newcommand{\defensedate}{12 D\'{e}cembre 2016} % Date of defense
 \newcommand{\logoED}{\includegraphics[scale=1.2]{logo/SDSV.png}} % Logo of doctoral school. Check the name of the correct file in the /logo folder.
 \newcommand{\logoEt}{\includegraphics[scale=1.2]{logo/UPS.png}} % Must be the logo corresponding to %PhD working place. Check the name of the correct file in the /logo folder.
 \newcommand{\vpos}{1} %% You can modify vertical position (leave cm as unit) in order to align horizontally both images
@@ -184,25 +184,25 @@
 \newcommand{\jurygenderA}{M.} % M. or Mme. / Mrs.
 \newcommand{\juryadressA}{Institut Jacques Monod}
 \newcommand{\jurygradeA}{Directeur de recherche}
-\newcommand{\juryroleA}{Directeur de th\'{e}se} % 
+\newcommand{\juryroleA}{Directeur de th\`{e}se} % 
 %%% Jury member n2 (Rapporteur) %%%
-\newcommand{\jurynameB}{Alain Jaquier}
+\newcommand{\jurynameB}{Alain Jacquier}
 \newcommand{\jurygenderB}{M.} % M. or Mme. / Mrs.
 \newcommand{\juryadressB}{Institut Pasteur}
-\newcommand{\jurygradeB}{Derecteur de recherche}
+\newcommand{\jurygradeB}{Directeur de recherche}
 \newcommand{\juryroleB}{Rapporteur}
 %%% Jury member n3 (Rapporteur) %%%
 \newcommand{\jurynameC}{Vincent Geli}
 \newcommand{\jurygenderC}{M.} % M. or Mme. / Mrs.
 \newcommand{\juryadressC}{CRCM}
-\newcommand{\jurygradeC}{Directeur de recherche}
+\newcommand{\jurygradeC}{Directeur de Recherche}
 \newcommand{\juryroleC}{Rapporteur}
 %%% Jury member n6 (Examinateur) %%%
 \newcommand{\jurynameF}{Daniel Gautheret}
 \newcommand{\jurygenderF}{M.} % M. or Mme. / Mrs.
-\newcommand{\juryadressF}{Univ Paris-sud}
+\newcommand{\juryadressF}{Univ. Paris-sud}
 \newcommand{\jurygradeF}{Professeur}
-\newcommand{\juryroleF}{examinateur}
+\newcommand{\juryroleF}{President du Jury}
 
 \definecolor{SchoolColor}{rgb}{0.6471, 0.1098, 0.1882} % Crimson
 
@@ -290,13 +290,13 @@
 \color{blue!20!red!45!black} %% Couleur violette du premier paragraphe
   \begin{center}    
     \LARGE\textsc{Th\`{e}se de doctorat\\ de l'Universit\'{e} Paris-Saclay} \\
-    \LARGE{\textsc{pr\`{e}par\`{e} \PhDworkingplace}} \\ \bigskip
+    \LARGE{\textsc{pr\'{e}par\'{e}e \`{a} \PhDworkingplace}} \\ \bigskip
   	\color{black} %% Couleur noir du reste du texte
 	\vfill
-    \Large{Ecole doctorale n$^{\circ}\ecodocnum$}\\ %% Numéro ED
+    \Large{\'{E}cole doctorale n$^{\circ}\ecodocnum$}\\ %% Numéro ED
     \Large{\ecodoctitle}  \\
 
-    \Large{Sp\`{e}cialit\`{e} de doctorat: \PhDspeciality} %% Spécialité
+    \Large{Sp\'{e}cialit\'{e} de doctorat: \PhDspeciality} %% Spécialité
     \vfill  
     \Large{par}
     \vfill
@@ -309,7 +309,7 @@
 \color{black}
 %% Jury
 \begin{flushleft}
-Th\`{e}se pr\`{e}sent\`{e}e et soutenue \`{a} \defenseplace, le \defensedate. \\
+Th\`{e}se pr\'{e}sent\'{e}e et soutenue \`{a} l'\defenseplace, le \defensedate. \\
 \bigskip
 Composition du Jury :
 \end{flushleft}
@@ -506,8 +506,9 @@ Route de l'Orme aux Merisiers RD 128 / 91190 Saint-Aubin, France}}
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{acm}
 \bibliography{references,fixed_references}
-\newpage
-\thispagestyle{empty}
-\mbox{}
+\includepdf[pages={1-},scale=1]{french_resume.pdf}
+%\newpage
+%\thispagestyle{empty}
+%\mbox{}
 \backpage
 }
