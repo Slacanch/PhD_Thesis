@@ -164,8 +164,8 @@
 \newcommand{\NNT}{2016SACLS587} %% Your NNT numer (the Library will attribute one...)
 \newcommand{\ecodocnum}{577} % Accrediation number
 \newcommand{\ecodoctitle}{Structure et dynamique des syst\`{e}mes vivants} % Full name of the doctorale school
-\newcommand{\PhDspeciality}{Sciences de la Vie et Sant\'{e}} % Speciality 
-\newcommand{\PhDworkingplace}{l'Institut Jacques Monod} %PhD working place (must be one of these : 
+\newcommand{\PhDspeciality}{Sciences de la Vie et de la Sant\'{e}} % Speciality 
+\newcommand{\PhDworkingplace}{l'Universite Paris-Sud} %PhD working place (must be one of these : 
 \newcommand{\defenseplace}{Institut Jacques Monod} %Place of defense
 \newcommand{\defensedate}{12 D\'{e}cembre 2016} % Date of defense
 \newcommand{\logoED}{\includegraphics[scale=1.2]{logo/SDSV.png}} % Logo of doctoral school. Check the name of the correct file in the /logo folder.
